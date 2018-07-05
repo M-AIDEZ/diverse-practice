@@ -1,4 +1,4 @@
-package maidez.practices.singleton.singletons;
+package maidez.practices.singleton;
 
 /**
  * Created by luwenyi on 2018/6/5.

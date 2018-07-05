@@ -1,4 +1,4 @@
-package maidez.practices.singleton.singletons;
+package maidez.practices.singleton;
 
 import java.io.Serializable;
 

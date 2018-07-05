@@ -1,10 +1,10 @@
-package maidez.practices.singleton;
+package maidez.parctices.singleton;
 
-import maidez.practices.singleton.singletons.HungerSingleton;
-import maidez.practices.singleton.singletons.LazySingleton;
-import maidez.practices.singleton.singletons.LazySingletonV2;
-import maidez.practices.singleton.singletons.LazySingletonV3;
-import maidez.practices.singleton.singletons.LazySingletonV4;
+import maidez.practices.singleton.HungerSingleton;
+import maidez.practices.singleton.LazySingleton;
+import maidez.practices.singleton.LazySingletonV2;
+import maidez.practices.singleton.LazySingletonV3;
+import maidez.practices.singleton.LazySingletonV4;
 import org.junit.Test;
 
 import java.io.FileInputStream;

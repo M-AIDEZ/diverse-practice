@@ -47,40 +47,4 @@ public class Master<T, V> {
     public Vector<V> get() {
         return results;
     }
-
-
-    public static void main(String[] args) throws InterruptedException {
-        int loopResult = 0;
-        long loopStartTime = System.currentTimeMillis();
-        for (int i = 0; i < 1000; i++) {
-            Thread.sleep(5L);
-            loopResult += i * i * i;
-        }
-        System.out.println(String.format("Use Time : %s, Result : %s", System.currentTimeMillis() - loopStartTime, loopResult));
-
-
-        int masterWorkerResult = 0;
-        Master<Integer, Integer> master = new Master<>(new Worker<Integer, Integer>() {
-            @Override
-            protected Integer execute(Integer integer) {
-                return integer * integer * integer;
-            }
-        }, 10);
-        for (int i = 0; i < 1000; i++) {
-            Thread.sleep(5L);
-            master.submit(i);
-        }
-        long masterWorkerStartTime = System.currentTimeMillis();
-        master.execute();
-        while (true) {
-            if (master.isDone()) {
-                break;
-            }
-        }
-        for (Integer integer : master.get()) {
-            masterWorkerResult += integer;
-        }
-        System.out.println(String.format("Use Time : %s, Result : %s", System.currentTimeMillis() - masterWorkerStartTime, masterWorkerResult));
-
-    }
 }

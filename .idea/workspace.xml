@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50809103-bf64-4591-8b66-541968bca961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/maidez/practices/concurrent/masterWorker/Master.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/maidez/practices/concurrent/masterWorker/Worker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/SingletonBreaker.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/SingletonBreaker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/HungerSingleton.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/HungerSingleton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingleton.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingleton.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2$1.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2$LazySingletonHolder.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2$LazySingletonHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV3$LazySingletonHolder.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV3$LazySingletonHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV3.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV4$LazySingletonHolder.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV4$LazySingletonHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV4.class" afterPath="$PROJECT_DIR$/target/classes/maidez/practices/singleton/singletons/LazySingletonV4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diverse-practice.iml" afterPath="$PROJECT_DIR$/diverse-practice.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -229,6 +212,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="diverse-practice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diverse-practice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diverse-practice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,8 +801,16 @@
       <workItem from="1528202710709" duration="34000" />
       <workItem from="1529650884610" duration="1524000" />
       <workItem from="1530697338742" duration="6195000" />
-      <workItem from="1530758116414" duration="146000" />
+      <workItem from="1530758116414" duration="329000" />
     </task>
+    <task id="LOCAL-00001" summary="add ignore file">
+      <created>1530758284385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530758284385</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -841,7 +846,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14949000" />
+    <option name="totallyTimeSpent" value="15132000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -884,6 +889,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add ignore file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ignore file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

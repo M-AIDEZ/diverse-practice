@@ -7,6 +7,10 @@
     <groupId>maidez</groupId>
     <artifactId>diverse-practice</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        <spring.version>4.3.7.RELEASE</spring.version>
+    </properties>
+
 
     <dependencies>
         <dependency>
@@ -25,6 +29,12 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>20.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
         </dependency>
 
     </dependencies>

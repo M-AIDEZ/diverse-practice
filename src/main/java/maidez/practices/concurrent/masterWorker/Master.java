@@ -47,4 +47,11 @@ public class Master<T, V> {
     public Vector<V> get() {
         return results;
     }
+
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(String.format("Table-%s", i));
+        }
+    }
 }

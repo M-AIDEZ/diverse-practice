@@ -1,4 +1,4 @@
-package maidez.practices.concurrent;
+package maidez.practices.algorithm;
 
 import com.google.common.collect.Maps;
 
@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Created by luwenyi on 2018/9/6.
  */
-public class Test {
+public class ChocolateBuyList {
 
     //数量
     private static int[] prdCnt = {1152, 576, 384, 288, 192, 96, 60, 48, 27, 15};
@@ -47,7 +47,7 @@ public class Test {
         }
 
         for (int i = 3200; i <= 3200; i++) {
-            System.out.println(String.format("需求：%s, 实际购买：%s，花费：%s，购买组合：%s", i, buyCnt[i], cost[i], Optional.ofNullable(buyMap.get(i)).map(Test::buyListStr).orElse("计算错误")));
+            System.out.println(String.format("需求：%s, 实际购买：%s，花费：%s，购买组合：%s", i, buyCnt[i], cost[i], Optional.ofNullable(buyMap.get(i)).map(ChocolateBuyList::buyListStr).orElse("计算错误")));
         }
     }
 

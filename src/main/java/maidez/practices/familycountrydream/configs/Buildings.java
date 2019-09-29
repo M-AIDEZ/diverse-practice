@@ -118,7 +118,7 @@ public class Buildings {
             new ParticularBuildingBuff(4, "便利店")
     ));
 
-    public static final Building.ResidentialBuilding 钢结构房 = new Building.ResidentialBuilding("钢结构房", 734D * MILLION
+    public static final Building.ResidentialBuilding 钢结构房 = new Building.ResidentialBuilding("钢结构房", 7.34D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(4, "钢铁厂")
     ));

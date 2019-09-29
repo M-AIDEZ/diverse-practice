@@ -35,6 +35,7 @@ public class BestLayoutCalculator {
                 .map(building -> (Building.ResidentialBuilding) building)
                 .collect(Collectors.toList());
 
+
         Board board = buildBoard();
         board.industrial(1, Buildings.食品厂);
         board.industrial(2, Buildings.纺织厂);
@@ -48,7 +49,8 @@ public class BestLayoutCalculator {
         board.residential(2, Buildings.居民楼);
         board.residential(3, Buildings.钢结构房);
 
-
+        Board beatBoard = board;
+        beatBoard.print();
         double totalIncome = board.getTotalIncome(PlayingStatusEnum.ONLINE);
         System.out.println("总收入：" + NumberUtils.format(totalIncome));
     }

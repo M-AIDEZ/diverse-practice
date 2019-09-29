@@ -1,5 +1,6 @@
 package maidez.practices.familycountrydream;
 
+import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import maidez.practices.familycountrydream.buff.Buff;
 import maidez.practices.familycountrydream.components.Building;
@@ -40,6 +41,18 @@ public class Board {
 
     public void residential(int position, Building.ResidentialBuilding toBuild) {
         build(position, BuildingTypeEnum.RESIDENTIAL, toBuild);
+    }
+
+    public void print(){
+        List<List<Building>> partition = Lists.partition(Lists.newArrayList(BUILDINGS), BOUND);
+        for (List<Building> buildings : partition) {
+            StringBuilder sb = new StringBuilder();
+            for (Building building : buildings) {
+                sb.append(building.getName()).append("      ");
+            }
+            sb.append("\n");
+            System.out.println(sb);
+        }
     }
 
     private static void build(int position, BuildingTypeEnum buildingTypeEnum, Building after) {

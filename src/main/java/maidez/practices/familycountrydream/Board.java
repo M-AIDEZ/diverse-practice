@@ -1,6 +1,5 @@
 package maidez.practices.familycountrydream;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import maidez.practices.familycountrydream.buff.Buff;
 import maidez.practices.familycountrydream.components.Building;
@@ -9,9 +8,10 @@ import maidez.practices.familycountrydream.components.Environment;
 import maidez.practices.familycountrydream.components.Policy;
 import maidez.practices.familycountrydream.enums.BuildingTypeEnum;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
+import maidez.practices.familycountrydream.utils.NumberUtils;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by luwenyi on 2019/9/29.
@@ -97,41 +97,69 @@ public class Board {
 
     public double getTotalIncome(PlayingStatusEnum playingStatusEnum) {
         double totalIncome = 0D;
-        List<Buff> allBuffs = getAllBuffs();
-        for (Building ib : BUILDINGS) {
-            if (ib == null) {
-                continue;
-            }
-            double coefficient = 1D;
-            for (Buff buff : allBuffs) {
-                coefficient = buff.buff(coefficient, ib, playingStatusEnum);
-            }
-            totalIncome += coefficient * ib.getIncome();
-        }
-        return totalIncome * playingStatusEnum.getCoefficient();
-    }
-
-    private List<Buff> getAllBuffs() {
-        List<Buff> allBuffs = Lists.newArrayList();
+        List<Buff> buildingBuffs = getBuildingBuffs();
+        List<Buff> policyBuffs = getPolicyBuffs();
+        List<Buff> cardBuffs = getCardBuffs();
+        List<Buff> environmentBuffs = getEnvironmentBuffs();
         for (Building building : BUILDINGS) {
             if (building == null) {
                 continue;
             }
-            allBuffs.addAll(building.getBuffs());
+            double buildingCoefficient = 1D;
+            for (Buff buildingBuff : buildingBuffs) {
+                if (buildingBuff.takeEffect(building, playingStatusEnum)) {
+                    buildingCoefficient += buildingBuff.getMagnification();
+                }
+            }
+            double policyCoefficient = 1D;
+            for (Buff policyBuff : policyBuffs) {
+                if (policyBuff.takeEffect(building, playingStatusEnum)) {
+                    policyCoefficient += policyBuff.getMagnification();
+                }
+            }
+            double cardCoefficient = 1D;
+            for (Buff cardBuff : cardBuffs) {
+                if (cardBuff.takeEffect(building, playingStatusEnum)) {
+                    cardCoefficient += cardBuff.getMagnification();
+                }
+            }
+            double environmentCoefficient = 1D;
+            for (Buff environmentBuff : environmentBuffs) {
+                if (environmentBuff.takeEffect(building, playingStatusEnum)) {
+                    environmentCoefficient += environmentBuff.getMagnification();
+                }
+            }
+            double income = building.getIncome() * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
+            System.out.println(building.getName() + "的收入：" + NumberUtils.format(income));
+            totalIncome += income;
         }
+        return totalIncome * playingStatusEnum.getCoefficient();
+    }
 
-        for (Policy policy : policies) {
-            allBuffs.add(policy.getBuff());
-        }
+    private List<Buff> getEnvironmentBuffs() {
+        return environments.stream()
+                .map(Environment::getBuffs)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+    }
 
-        for (Environment environment : environments) {
-            allBuffs.addAll(environment.getBuffs());
-        }
+    private List<Buff> getCardBuffs() {
+        return cards.stream()
+                .map(Card::getBuff)
+                .collect(Collectors.toList());
+    }
 
-        for (Card card : cards) {
-            allBuffs.add(card.getBuff());
-        }
+    private List<Buff> getPolicyBuffs() {
+        return policies.stream()
+                .map(Policy::getBuff)
+                .collect(Collectors.toList());
+    }
 
-        return allBuffs;
+    private List<Buff> getBuildingBuffs() {
+        return Arrays.stream(BUILDINGS)
+                .filter(Objects::nonNull)
+                .map(Building::getBuffs)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 }

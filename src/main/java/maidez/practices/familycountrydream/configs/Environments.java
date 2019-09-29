@@ -22,4 +22,11 @@ public class Environments {
                     new ParticularBuildingBuff(1,"人才公寓"),
                     new ParticularBuildingBuff(1.5, "小型公寓")
             ));
+
+    public static final Environment 保税商圈 = new Environment("保税商圈",
+            Lists.newArrayList(
+                    new BuildingTypeBuff(0.3, BuildingTypeEnum.COMMERCIAL),
+                    new ParticularBuildingBuff(1,"商贸中心"),
+                    new ParticularBuildingBuff(1.5, "五金店")
+            ));
 }

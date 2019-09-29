@@ -54,7 +54,7 @@ public class BestLayoutCalculator {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.和谐家园, Environments.家国之光);
+        List<Environment> environments = Lists.newArrayList(Environments.保税商圈);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

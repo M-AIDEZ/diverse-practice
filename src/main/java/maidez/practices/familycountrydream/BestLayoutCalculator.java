@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class BestLayoutCalculator {
 
     public static void main(String[] args) {
-        PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.ONLINE;
+        PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.OFFLINE;
         List<Building.IndustrialBuilding> industrialBuildings = Buildings.ALL_BUILDINGS.stream()
                 .filter(building -> building instanceof Building.IndustrialBuilding)
                 .map(building -> (Building.IndustrialBuilding) building)

@@ -1,6 +1,5 @@
 package maidez.practices.familycountrydream;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import maidez.practices.familycountrydream.buff.Buff;
 import maidez.practices.familycountrydream.components.Building;
@@ -25,17 +24,36 @@ public class Board {
         this.cards = cards;
     }
 
-
     private static final int BOUND = 3;
     // buildings
-    private static final Building[] BUILDINGS = new Building[BOUND * BOUND];
+    private final Building[] BUILDINGS = new Building[BOUND * BOUND];
+
+    private final double[] BUILDING_INCOMES = new double[BOUND * BOUND];
 
     public void industrial(int position, Building.IndustrialBuilding toBuild) {
         build(position, BuildingTypeEnum.INDUSTRIAL, toBuild);
     }
 
+    public void industrial(Building.IndustrialBuilding toBuild1, Building.IndustrialBuilding toBuild2, Building.IndustrialBuilding toBuild3) {
+        build(1, BuildingTypeEnum.INDUSTRIAL, null);
+        build(2, BuildingTypeEnum.INDUSTRIAL, null);
+        build(3, BuildingTypeEnum.INDUSTRIAL, null);
+        build(1, BuildingTypeEnum.INDUSTRIAL, toBuild1);
+        build(2, BuildingTypeEnum.INDUSTRIAL, toBuild2);
+        build(3, BuildingTypeEnum.INDUSTRIAL, toBuild3);
+    }
+
     public void commercial(int position, Building.CommercialBuilding toBuild) {
         build(position, BuildingTypeEnum.COMMERCIAL, toBuild);
+    }
+
+    public void commercial(Building.CommercialBuilding toBuild1, Building.CommercialBuilding toBuild2, Building.CommercialBuilding toBuild3) {
+        build(1, BuildingTypeEnum.COMMERCIAL, null);
+        build(2, BuildingTypeEnum.COMMERCIAL, null);
+        build(3, BuildingTypeEnum.COMMERCIAL, null);
+        build(1, BuildingTypeEnum.COMMERCIAL, toBuild1);
+        build(2, BuildingTypeEnum.COMMERCIAL, toBuild2);
+        build(3, BuildingTypeEnum.COMMERCIAL, toBuild3);
     }
 
 
@@ -43,19 +61,29 @@ public class Board {
         build(position, BuildingTypeEnum.RESIDENTIAL, toBuild);
     }
 
-    public void print(){
-        List<List<Building>> partition = Lists.partition(Lists.newArrayList(BUILDINGS), BOUND);
-        for (List<Building> buildings : partition) {
-            StringBuilder sb = new StringBuilder();
-            for (Building building : buildings) {
-                sb.append(building.getName()).append("      ");
-            }
-            sb.append("\n");
-            System.out.println(sb);
-        }
+    public void residential(Building.ResidentialBuilding toBuild1, Building.ResidentialBuilding toBuild2, Building.ResidentialBuilding toBuild3) {
+        build(1, BuildingTypeEnum.RESIDENTIAL, null);
+        build(2, BuildingTypeEnum.RESIDENTIAL, null);
+        build(3, BuildingTypeEnum.RESIDENTIAL, null);
+        build(1, BuildingTypeEnum.RESIDENTIAL, toBuild1);
+        build(2, BuildingTypeEnum.RESIDENTIAL, toBuild2);
+        build(3, BuildingTypeEnum.RESIDENTIAL, toBuild3);
     }
 
-    private static void build(int position, BuildingTypeEnum buildingTypeEnum, Building after) {
+    public void print() {
+        System.out.println("============布局==============");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < BUILDINGS.length; i++) {
+            sb.append(BUILDINGS[i].getName()).append("    ").append(NumberUtils.format(BUILDING_INCOMES[i], 3)).append("     ");
+            if (i % BOUND == 2) {
+                System.out.println(sb);
+                sb = new StringBuilder();
+            }
+        }
+        System.out.println("=============================");
+    }
+
+    private void build(int position, BuildingTypeEnum buildingTypeEnum, Building after) {
         //CHECK
         checkPosition(position);
         checkDuplicate(after);
@@ -64,7 +92,7 @@ public class Board {
         String beforeName = BUILDINGS[index] == null ? "空地" : BUILDINGS[index].getName();
         String afterName = after == null ? "空地" : after.getName();
         BUILDINGS[index] = after;
-        System.out.println(position + "号" + buildingTypeEnum.getDesc() + "用地：已从 [ " + beforeName + " ] 改建为 [ " + afterName + " ] 。");
+//        System.out.println(position + "号" + buildingTypeEnum.getDesc() + "用地：已从 [ " + beforeName + " ] 改建为 [ " + afterName + " ] 。");
     }
 
     private static int getOffset(BuildingTypeEnum buildingTypeEnum) {
@@ -86,7 +114,7 @@ public class Board {
         }
     }
 
-    private static void checkDuplicate(Building after) {
+    private void checkDuplicate(Building after) {
         if (after != null) {
             Set<String> builtSet = Sets.newHashSet();
             for (Building building : BUILDINGS) {
@@ -114,7 +142,8 @@ public class Board {
         List<Buff> policyBuffs = getPolicyBuffs();
         List<Buff> cardBuffs = getCardBuffs();
         List<Buff> environmentBuffs = getEnvironmentBuffs();
-        for (Building building : BUILDINGS) {
+        for (int i = 0; i < BUILDINGS.length; i++) {
+            Building building = BUILDINGS[i];
             if (building == null) {
                 continue;
             }
@@ -143,7 +172,8 @@ public class Board {
                 }
             }
             double income = building.getIncome() * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
-            System.out.println(building.getName() + "的收入：" + NumberUtils.format(income));
+            BUILDING_INCOMES[i] = income;
+//            System.out.println(building.getName() + "的收入：" + NumberUtils.format(income));
             totalIncome += income;
         }
         return totalIncome * playingStatusEnum.getCoefficient();

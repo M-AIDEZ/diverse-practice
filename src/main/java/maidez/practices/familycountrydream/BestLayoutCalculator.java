@@ -8,6 +8,7 @@ import maidez.practices.familycountrydream.configs.Cards;
 import maidez.practices.familycountrydream.configs.Environments;
 import maidez.practices.familycountrydream.configs.Policies;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
+import maidez.practices.familycountrydream.utils.MathUtils;
 import maidez.practices.familycountrydream.utils.NumberUtils;
 
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class BestLayoutCalculator {
 
     public static void main(String[] args) {
+        PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.ONLINE;
         List<Building.IndustrialBuilding> industrialBuildings = Buildings.ALL_BUILDINGS.stream()
                 .filter(building -> building instanceof Building.IndustrialBuilding)
                 .map(building -> (Building.IndustrialBuilding) building)
@@ -36,23 +38,32 @@ public class BestLayoutCalculator {
                 .collect(Collectors.toList());
 
 
-        Board board = buildBoard();
-        board.industrial(1, Buildings.食品厂);
-        board.industrial(2, Buildings.纺织厂);
-        board.industrial(3, Buildings.钢铁厂);
-
-        board.commercial(1, Buildings.便利店);
-        board.commercial(2, Buildings.菜市场);
-        board.commercial(3, Buildings.民食斋);
-
-        board.residential(1, Buildings.人才公寓);
-        board.residential(2, Buildings.居民楼);
-        board.residential(3, Buildings.钢结构房);
-
-        Board beatBoard = board;
-        beatBoard.print();
-        double totalIncome = board.getTotalIncome(PlayingStatusEnum.ONLINE);
-        System.out.println("总收入：" + NumberUtils.format(totalIncome));
+        Board bestBoard = null;
+        double maxIncome = Double.MIN_VALUE;
+        List<List<Building.IndustrialBuilding>> ibCombinations = MathUtils.combination(industrialBuildings, 3);
+        List<List<Building.CommercialBuilding>> cbCombinations = MathUtils.combination(commercialBuildings, 3);
+        List<List<Building.ResidentialBuilding>> rbCombinations = MathUtils.combination(residentialBuildings, 3);
+        for (List<Building.IndustrialBuilding> ibCombination : ibCombinations) {
+            for (List<Building.CommercialBuilding> cbCombination : cbCombinations) {
+                for (List<Building.ResidentialBuilding> rbCombination : rbCombinations) {
+                    Board board = buildBoard();
+                    board.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
+                    board.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
+                    board.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
+                    double totalIncome = board.getTotalIncome(playingStatusEnum);
+                    if (totalIncome > maxIncome) {
+                        bestBoard = board;
+                        maxIncome = totalIncome;
+                    }
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("=========DONE=========");
+        System.out.println();
+        bestBoard.print();
+        System.out.println(bestBoard);
+        System.out.println("总收入：" + NumberUtils.format(maxIncome, 3));
     }
 
     private static Board buildBoard() {

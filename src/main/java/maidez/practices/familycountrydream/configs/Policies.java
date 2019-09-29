@@ -20,7 +20,7 @@ public class Policies {
 
     private static final Policy 全面深化改革 = new Policy("全面深化改革", new GlobalBuff(2));
 
-    private static final Policy 创新驱动 = new Policy("创新驱动", new BuildingTypeBuff(1.5, BuildingTypeEnum.INDUSTRIAL));
+    private static final Policy 创新驱动 = new Policy("创新驱动", new BuildingTypeBuff(3, BuildingTypeEnum.INDUSTRIAL));
 
     private static final Policy 家国之光 = new Policy("家国之光", new GlobalBuff(0.45));
 

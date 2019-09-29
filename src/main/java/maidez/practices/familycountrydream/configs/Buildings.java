@@ -16,39 +16,39 @@ import static maidez.practices.familycountrydream.components.Constants.MILLION;
  */
 public class Buildings {
     //industrial buildings
-    public static final Building.IndustrialBuilding 造纸厂 = new Building.IndustrialBuilding("造纸厂", 2.24D * MILLION
+    public static final Building.IndustrialBuilding 造纸厂 = new Building.IndustrialBuilding("造纸厂", 7.34D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(4, "图书城")
     ));
 
-    public static final Building.IndustrialBuilding 食品厂 = new Building.IndustrialBuilding("食品厂", 1D * MILLION
+    public static final Building.IndustrialBuilding 食品厂 = new Building.IndustrialBuilding("食品厂", 1.83D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "菜市场")
     ));
 
-    public static final Building.IndustrialBuilding 纺织厂 = new Building.IndustrialBuilding("纺织厂", 1D * MILLION
+    public static final Building.IndustrialBuilding 纺织厂 = new Building.IndustrialBuilding("纺织厂", 1.83D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "服装店"),
             new BuildingTypeBuff(0.45, BuildingTypeEnum.COMMERCIAL)
     ));
 
-    public static final Building.IndustrialBuilding 木材厂 = new Building.IndustrialBuilding("木材厂", 559D * KILO
+    public static final Building.IndustrialBuilding 木材厂 = new Building.IndustrialBuilding("木材厂", 1.83D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "木屋")
     ));
 
-    public static final Building.IndustrialBuilding 电厂 = new Building.IndustrialBuilding("电厂", 57.8D * KILO
+    public static final Building.IndustrialBuilding 电厂 = new Building.IndustrialBuilding("电厂", 1.3D * MILLION
             , Lists.newArrayList(
             new PlayingStatusBuff(0.5, PlayingStatusEnum.ONLINE)
     ));
 
-    public static final Building.IndustrialBuilding 钢铁厂 = new Building.IndustrialBuilding("钢铁厂", 334D * KILO
+    public static final Building.IndustrialBuilding 钢铁厂 = new Building.IndustrialBuilding("钢铁厂", 612D * KILO
             , Lists.newArrayList(
             new ParticularBuildingBuff(2, "钢结构房"),
             new BuildingTypeBuff(0.3, BuildingTypeEnum.INDUSTRIAL)
     ));
 
-    public static final Building.IndustrialBuilding 零件厂 = new Building.IndustrialBuilding("零件厂", 334D * KILO
+    public static final Building.IndustrialBuilding 零件厂 = new Building.IndustrialBuilding("零件厂", 612D * KILO
             , Lists.newArrayList(
             new ParticularBuildingBuff(2, "五金店"),
             new ParticularBuildingBuff(1, "企鹅机械")
@@ -73,30 +73,30 @@ public class Buildings {
             new ParticularBuildingBuff(4, "食品厂")
     ));
 
-    public static final Building.CommercialBuilding 五金店 = new Building.CommercialBuilding("五金店", 2.23D * MILLION
+    public static final Building.CommercialBuilding 五金店 = new Building.CommercialBuilding("五金店", 7.34D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(4, "零件厂")
     ));
 
-    public static final Building.CommercialBuilding 便利店 = new Building.CommercialBuilding("便利店", 4.01D * MILLION
+    public static final Building.CommercialBuilding 便利店 = new Building.CommercialBuilding("便利店", 7.34D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(4, "居民楼")
     ));
 
-    public static final Building.CommercialBuilding 服装店 = new Building.CommercialBuilding("服装店", 559D * KILO
+    public static final Building.CommercialBuilding 服装店 = new Building.CommercialBuilding("服装店", 1.83D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "纺织厂")
     ));
 
-    public static final Building.CommercialBuilding 图书城 = new Building.CommercialBuilding("图书城", 186 * KILO
+    public static final Building.CommercialBuilding 图书城 = new Building.CommercialBuilding("图书城", 612 * KILO
             , Lists.newArrayList(
             new ParticularBuildingBuff(2, "学校"),
             new ParticularBuildingBuff(2, "造纸厂")
     ));
 
-    public static final Building.CommercialBuilding 学校 = new Building.CommercialBuilding("学校", 186D * KILO
+    public static final Building.CommercialBuilding 学校 = new Building.CommercialBuilding("学校", 1.83 * MILLION
             , Lists.newArrayList(
-            new ParticularBuildingBuff(2, "图书城")
+            new ParticularBuildingBuff(3, "图书城")
     ));
 
     public static final Building.CommercialBuilding 民食斋 = new Building.CommercialBuilding("民食斋", 254D * KILO
@@ -113,7 +113,7 @@ public class Buildings {
 
     //residential buildings    
 
-    public static final Building.ResidentialBuilding 居民楼 = new Building.ResidentialBuilding("居民楼", 4.01D * MILLION
+    public static final Building.ResidentialBuilding 居民楼 = new Building.ResidentialBuilding("居民楼", 7.34D * MILLION
             , Lists.newArrayList(
             new ParticularBuildingBuff(4, "便利店")
     ));
@@ -123,28 +123,28 @@ public class Buildings {
             new ParticularBuildingBuff(4, "钢铁厂")
     ));
 
-    public static final Building.ResidentialBuilding 木屋 = new Building.ResidentialBuilding("木屋", 2.23D * MILLION
+    public static final Building.ResidentialBuilding 木屋 = new Building.ResidentialBuilding("木屋", 7.34D * MILLION
             , Lists.newArrayList(
-            new ParticularBuildingBuff(3, "木材厂")
+            new ParticularBuildingBuff(4, "木材厂")
     ));
 
-    public static final Building.ResidentialBuilding 平房 = new Building.ResidentialBuilding("平房", 614D * KILO
+    public static final Building.ResidentialBuilding 平房 = new Building.ResidentialBuilding("平房", 2.02D * MILLION
             , Lists.newArrayList(
             new BuildingTypeBuff(0.6, BuildingTypeEnum.RESIDENTIAL)
     ));
 
-    public static final Building.ResidentialBuilding 人才公寓 = new Building.ResidentialBuilding("人才公寓", 72D * KILO
+    public static final Building.ResidentialBuilding 人才公寓 = new Building.ResidentialBuilding("人才公寓", 234D * KILO
             , Lists.newArrayList(
             new BuildingTypeBuff(0.15, BuildingTypeEnum.INDUSTRIAL),
             new PlayingStatusBuff(0.2, PlayingStatusEnum.ONLINE)
     ));
 
-    public static final Building.ResidentialBuilding 小型公寓 = new Building.ResidentialBuilding("小型公寓", 34.1D * KILO
+    public static final Building.ResidentialBuilding 小型公寓 = new Building.ResidentialBuilding("小型公寓", 722D * KILO
             , Lists.newArrayList(
-            new OfferingBuff(0.1)
+            new OfferingBuff(0.25)
     ));
 
-    public static final Building.ResidentialBuilding 中式小楼 = new Building.ResidentialBuilding("中式小楼", 234 * KILO
+    public static final Building.ResidentialBuilding 中式小楼 = new Building.ResidentialBuilding("中式小楼", 428D * KILO
             , Lists.newArrayList(
             new PlayingStatusBuff(0.2, PlayingStatusEnum.ONLINE),
             new BuildingTypeBuff(0.15, BuildingTypeEnum.RESIDENTIAL)

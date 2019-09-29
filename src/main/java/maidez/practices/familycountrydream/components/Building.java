@@ -1,4 +1,4 @@
-package maidez.practices.familycountrydream;
+package maidez.practices.familycountrydream.components;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

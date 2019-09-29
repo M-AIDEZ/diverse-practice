@@ -1,7 +1,6 @@
 package maidez.practices.familycountrydream.buff;
 
-import lombok.AllArgsConstructor;
-import maidez.practices.familycountrydream.Building;
+import maidez.practices.familycountrydream.components.Building;
 import maidez.practices.familycountrydream.enums.BuildingTypeEnum;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
 

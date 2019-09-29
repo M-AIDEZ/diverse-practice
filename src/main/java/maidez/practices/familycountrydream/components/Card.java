@@ -1,4 +1,4 @@
-package maidez.practices.familycountrydream;
+package maidez.practices.familycountrydream.components;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import maidez.practices.familycountrydream.buff.Buff;
  */
 @AllArgsConstructor
 @Getter
-public class Policy {
+public class Card {
     private String name;
 
     private Buff buff;

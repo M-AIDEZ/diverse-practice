@@ -1,6 +1,6 @@
 package maidez.practices.familycountrydream.buff;
 
-import maidez.practices.familycountrydream.Building;
+import maidez.practices.familycountrydream.components.Building;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
 
 /**
@@ -13,10 +13,11 @@ public abstract class Buff {
         this.magnification = magnification;
     }
 
-    public void buff(Building building, PlayingStatusEnum playingStatusEnum) {
+    public double buff(double coefficient, Building building, PlayingStatusEnum playingStatusEnum) {
         if (takeEffect(building, playingStatusEnum)) {
-            building.setIncome(building.getIncome() * magnification);
+            return coefficient * (1D + magnification);
         }
+        return coefficient;
     }
 
     public abstract boolean takeEffect(Building building, PlayingStatusEnum playingStatusEnum);

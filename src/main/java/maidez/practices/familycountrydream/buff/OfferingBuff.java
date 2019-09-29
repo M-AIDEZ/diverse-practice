@@ -1,6 +1,6 @@
 package maidez.practices.familycountrydream.buff;
 
-import maidez.practices.familycountrydream.Building;
+import maidez.practices.familycountrydream.components.Building;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
 
 /**

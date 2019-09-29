@@ -1,7 +1,7 @@
 package maidez.practices.familycountrydream.configs;
 
 import com.google.common.collect.Lists;
-import maidez.practices.familycountrydream.Environment;
+import maidez.practices.familycountrydream.components.Environment;
 import maidez.practices.familycountrydream.buff.BuildingTypeBuff;
 import maidez.practices.familycountrydream.buff.GlobalBuff;
 import maidez.practices.familycountrydream.buff.ParticularBuildingBuff;

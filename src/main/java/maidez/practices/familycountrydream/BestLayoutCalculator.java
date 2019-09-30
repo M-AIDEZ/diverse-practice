@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class BestLayoutCalculator {
 
     public static void main(String[] args) {
-        PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.OFFLINE;
+        PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.ONLINE;
         List<Building.IndustrialBuilding> industrialBuildings = Buildings.ALL_BUILDINGS.stream()
                 .filter(building -> building instanceof Building.IndustrialBuilding)
                 .map(building -> (Building.IndustrialBuilding) building)
@@ -67,7 +67,7 @@ public class BestLayoutCalculator {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.保税商圈);
+        List<Environment> environments = Lists.newArrayList(Environments.文明城市);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

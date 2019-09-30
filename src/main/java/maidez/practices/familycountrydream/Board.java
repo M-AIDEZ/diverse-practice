@@ -30,6 +30,8 @@ public class Board {
 
     private final double[] BUILDING_INCOMES = new double[BOUND * BOUND];
 
+    private final double[] BUILDING_COEFFICIENTS = new double[BOUND * BOUND];
+
     public void industrial(int position, Building.IndustrialBuilding toBuild) {
         build(position, BuildingTypeEnum.INDUSTRIAL, toBuild);
     }
@@ -74,7 +76,7 @@ public class Board {
         System.out.println("============布局==============");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < BUILDINGS.length; i++) {
-            sb.append(BUILDINGS[i].getName()).append("    ").append(NumberUtils.format(BUILDING_INCOMES[i], 3)).append("     ");
+            sb.append(BUILDINGS[i].getName()).append("    ").append(NumberUtils.format(BUILDING_INCOMES[i], 3)).append("     ").append(NumberUtils.format(BUILDING_COEFFICIENTS[i], 3)).append("        ");
             if (i % BOUND == 2) {
                 System.out.println(sb);
                 sb = new StringBuilder();
@@ -136,7 +138,7 @@ public class Board {
 
     private List<Card> cards;
 
-    public double getTotalIncome(PlayingStatusEnum playingStatusEnum) {
+    public double getTotalIncome(PlayingStatusEnum playingStatusEnum, boolean coefficientOnly) {
         double totalIncome = 0D;
         List<Buff> buildingBuffs = getBuildingBuffs();
         List<Buff> policyBuffs = getPolicyBuffs();
@@ -171,8 +173,9 @@ public class Board {
                     environmentCoefficient += environmentBuff.getMagnification();
                 }
             }
-            double income = building.getIncome() * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
+            double income = (coefficientOnly ? 1D : building.getIncome()) * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
             BUILDING_INCOMES[i] = income;
+            BUILDING_COEFFICIENTS[i] = buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
 //            System.out.println(building.getName() + "的收入：" + NumberUtils.format(income));
             totalIncome += income;
         }

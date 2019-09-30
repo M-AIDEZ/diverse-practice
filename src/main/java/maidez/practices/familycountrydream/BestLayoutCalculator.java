@@ -38,8 +38,10 @@ public class BestLayoutCalculator {
                 .collect(Collectors.toList());
 
 
-        Board bestBoard = null;
+        Board bestIncome = null;
         double maxIncome = Double.MIN_VALUE;
+        Board bestCoefficient = null;
+        double maxCoefficient = Double.MIN_VALUE;
         List<List<Building.IndustrialBuilding>> ibCombinations = MathUtils.combination(industrialBuildings, 3);
         List<List<Building.CommercialBuilding>> cbCombinations = MathUtils.combination(commercialBuildings, 3);
         List<List<Building.ResidentialBuilding>> rbCombinations = MathUtils.combination(residentialBuildings, 3);
@@ -50,24 +52,40 @@ public class BestLayoutCalculator {
                     board.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
                     board.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
                     board.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
-                    double totalIncome = board.getTotalIncome(playingStatusEnum);
+                    double totalIncome = board.getTotalIncome(playingStatusEnum, false);
                     if (totalIncome > maxIncome) {
-                        bestBoard = board;
+                        bestIncome = board;
                         maxIncome = totalIncome;
+                    }
+
+                    Board board2 = buildBoard();
+                    board2.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
+                    board2.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
+                    board2.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
+                    double totalCoefficient = board2.getTotalIncome(playingStatusEnum, true);
+                    if (totalCoefficient > maxCoefficient) {
+                        bestCoefficient = board2;
+                        maxCoefficient = totalCoefficient;
                     }
                 }
             }
         }
         System.out.println();
-        System.out.println("=========DONE=========");
+        System.out.println("=========当前最佳收入=========");
         System.out.println();
-        bestBoard.print();
-        System.out.println(bestBoard);
+        bestIncome.print();
         System.out.println("总收入：" + NumberUtils.format(maxIncome, 3));
+
+        System.out.println();
+        System.out.println();
+        System.out.println("=========当前最佳系数=========");
+        System.out.println();
+        bestCoefficient.print();
+        System.out.println("总系数：" + NumberUtils.format(maxCoefficient, 3));
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.文明城市);
+        List<Environment> environments = Lists.newArrayList(Environments.美丽街区);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

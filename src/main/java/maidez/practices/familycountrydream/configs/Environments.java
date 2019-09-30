@@ -38,4 +38,11 @@ public class Environments {
                     new GlobalBuff(0.2),
                     new BuildingTypeBuff(0.3, BuildingTypeEnum.RESIDENTIAL)
             ));
+
+    public static final Environment 美丽街区 = new Environment("美丽街区",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(2, "花园洋房"),
+                    new ParticularBuildingBuff(1, "钢结构房"),
+                    new ParticularBuildingBuff(1, "平房")
+            ));
 }

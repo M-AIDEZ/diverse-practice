@@ -39,7 +39,7 @@ public class Buildings {
 
     public static final Building.IndustrialBuilding 电厂 = new Building.IndustrialBuilding("电厂", 7.26D * MILLION
             , Lists.newArrayList(
-            new PlayingStatusBuff(0.5, PlayingStatusEnum.ONLINE)
+            new PlayingStatusBuff(0.8, PlayingStatusEnum.ONLINE)
     ));
 
     public static final Building.IndustrialBuilding 钢铁厂 = new Building.IndustrialBuilding("钢铁厂", 1.1D * MILLION
@@ -62,7 +62,7 @@ public class Buildings {
 
     public static final Building.IndustrialBuilding 水厂 = new Building.IndustrialBuilding("水厂", 1.39D * MILLION
             , Lists.newArrayList(
-            new PlayingStatusBuff(0.1, PlayingStatusEnum.OFFLINE)
+            new PlayingStatusBuff(0.15, PlayingStatusEnum.OFFLINE)
     ));
 
 
@@ -130,7 +130,7 @@ public class Buildings {
 
     public static final Building.ResidentialBuilding 平房 = new Building.ResidentialBuilding("平房", 14.6D * MILLION
             , Lists.newArrayList(
-            new BuildingTypeBuff(0.6, BuildingTypeEnum.RESIDENTIAL)
+            new BuildingTypeBuff(0.8, BuildingTypeEnum.RESIDENTIAL)
     ));
 
     public static final Building.ResidentialBuilding 人才公寓 = new Building.ResidentialBuilding("人才公寓", 2.87D * MILLION

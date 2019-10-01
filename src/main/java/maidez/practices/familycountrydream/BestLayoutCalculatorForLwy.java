@@ -3,10 +3,10 @@ package maidez.practices.familycountrydream;
 import com.google.common.collect.Lists;
 import maidez.practices.familycountrydream.components.Building;
 import maidez.practices.familycountrydream.components.Environment;
-import maidez.practices.familycountrydream.configs.Buildings;
-import maidez.practices.familycountrydream.configs.Cards;
-import maidez.practices.familycountrydream.configs.Environments;
-import maidez.practices.familycountrydream.configs.Policies;
+import maidez.practices.familycountrydream.configs.lwy.Buildings;
+import maidez.practices.familycountrydream.configs.lwy.Cards;
+import maidez.practices.familycountrydream.configs.lwy.Environments;
+import maidez.practices.familycountrydream.configs.lwy.Policies;
 import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
 import maidez.practices.familycountrydream.utils.MathUtils;
 import maidez.practices.familycountrydream.utils.NumberUtils;
@@ -15,10 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+
 /**
  * Created by luwenyi on 2019/9/29.
  */
-public class BestLayoutCalculator {
+public class BestLayoutCalculatorForLwy {
 
     public static void main(String[] args) {
         PlayingStatusEnum playingStatusEnum = PlayingStatusEnum.ONLINE;
@@ -85,7 +86,7 @@ public class BestLayoutCalculator {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.美丽街区);
+        List<Environment> environments = Lists.newArrayList(Environments.营商环境, Environments.国庆);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

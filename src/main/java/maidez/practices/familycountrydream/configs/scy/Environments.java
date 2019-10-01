@@ -1,11 +1,10 @@
-package maidez.practices.familycountrydream.configs;
+package maidez.practices.familycountrydream.configs.scy;
 
 import com.google.common.collect.Lists;
-import maidez.practices.familycountrydream.buff.BuildingTypeBuff;
-import maidez.practices.familycountrydream.buff.GlobalBuff;
-import maidez.practices.familycountrydream.buff.ParticularBuildingBuff;
+import maidez.practices.familycountrydream.buff.*;
 import maidez.practices.familycountrydream.components.Environment;
 import maidez.practices.familycountrydream.enums.BuildingTypeEnum;
+import maidez.practices.familycountrydream.enums.PlayingStatusEnum;
 
 /**
  * Created by luwenyi on 2019/9/29.
@@ -44,5 +43,12 @@ public class Environments {
                     new ParticularBuildingBuff(2, "花园洋房"),
                     new ParticularBuildingBuff(1, "钢结构房"),
                     new ParticularBuildingBuff(1, "平房")
+            ));
+
+    public static final Environment 国庆 = new Environment("国庆",
+            Lists.newArrayList(
+                    new OfferingBuff(0.2),
+                    new PlayingStatusBuff(1, PlayingStatusEnum.ONLINE),
+                    new PlayingStatusBuff(1, PlayingStatusEnum.OFFLINE)
             ));
 }

@@ -1,4 +1,4 @@
-package maidez.practices.familycountrydream.configs;
+package maidez.practices.familycountrydream.configs.lwy;
 
 import com.google.common.collect.Lists;
 import maidez.practices.familycountrydream.buff.BuildingTypeBuff;
@@ -24,9 +24,11 @@ public class Policies {
 
     private static final Policy 创新驱动 = new Policy("创新驱动", new BuildingTypeBuff(6, BuildingTypeEnum.INDUSTRIAL));
 
-    private static final Policy 家国之光 = new Policy("家国之光", new GlobalBuff(0.55));
+    private static final Policy 家国之光 = new Policy("家国之光", new GlobalBuff(0.7));
 
-    private static final Policy 全面依法治国 = new Policy("全面依法治国", new PlayingStatusBuff(0.2, PlayingStatusEnum.ONLINE));
+    private static final Policy 全面依法治国 = new Policy("全面依法治国", new PlayingStatusBuff(2, PlayingStatusEnum.ONLINE));
 
-    public static final List<Policy> ALL_POLICIES = Lists.newArrayList(一带一路建设, 自由贸易区建设, 区域协调发展, 全面深化改革, 家国之光, 创新驱动, 全面依法治国);
+    private static final Policy 科教兴国 = new Policy("科教兴国", new PlayingStatusBuff(1, PlayingStatusEnum.OFFLINE));
+
+    public static final List<Policy> ALL_POLICIES = Lists.newArrayList(一带一路建设, 自由贸易区建设, 区域协调发展, 全面深化改革, 家国之光, 创新驱动, 全面依法治国, 科教兴国);
 }

@@ -1,4 +1,4 @@
-package maidez.practices.familycountrydream.configs;
+package maidez.practices.familycountrydream.configs.lwy;
 
 import com.google.common.collect.Lists;
 import maidez.practices.familycountrydream.buff.BuildingTypeBuff;

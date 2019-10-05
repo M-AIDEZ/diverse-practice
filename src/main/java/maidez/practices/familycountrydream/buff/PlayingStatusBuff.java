@@ -15,7 +15,12 @@ public class PlayingStatusBuff extends Buff {
     }
 
     @Override
-    public boolean takeEffect(Building building, PlayingStatusEnum playingStatusEnum) {
+    public boolean effectOnBuildings(Building building, PlayingStatusEnum playingStatusEnum) {
         return this.playingStatusEnum == playingStatusEnum;
+    }
+
+    @Override
+    public boolean effectOnOffer() {
+        return false;
     }
 }

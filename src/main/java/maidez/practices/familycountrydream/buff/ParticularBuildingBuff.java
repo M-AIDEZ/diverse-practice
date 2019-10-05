@@ -15,7 +15,12 @@ public class ParticularBuildingBuff extends Buff {
     }
 
     @Override
-    public boolean takeEffect(Building building, PlayingStatusEnum playingStatusEnum) {
+    public boolean effectOnBuildings(Building building, PlayingStatusEnum playingStatusEnum) {
         return targetBuildingName.equals(building.getName());
+    }
+
+    @Override
+    public boolean effectOnOffer() {
+        return false;
     }
 }

@@ -13,7 +13,12 @@ public class GlobalBuff extends Buff {
     }
 
     @Override
-    public boolean takeEffect(Building building, PlayingStatusEnum playingStatusEnum) {
+    public boolean effectOnBuildings(Building building, PlayingStatusEnum playingStatusEnum) {
         return true;
+    }
+
+    @Override
+    public boolean effectOnOffer() {
+        return false;
     }
 }

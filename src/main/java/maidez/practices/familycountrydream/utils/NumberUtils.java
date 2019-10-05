@@ -1,20 +1,23 @@
 package maidez.practices.familycountrydream.utils;
 
-import maidez.practices.familycountrydream.components.Constants;
-
 import java.math.BigDecimal;
 
-import static maidez.practices.familycountrydream.components.Constants.BILLION;
-import static maidez.practices.familycountrydream.components.Constants.KILO;
-import static maidez.practices.familycountrydream.components.Constants.MILLION;
-import static maidez.practices.familycountrydream.components.Constants.TRILLION;
+import static maidez.practices.familycountrydream.components.Constants.*;
 
 /**
  * Created by luwenyi on 2019/9/29.
  */
 public class NumberUtils {
     public static String format(double number, int scale) {
-        if (number >= Constants.TRILLION) {
+        if (number >= DD) {
+            return round(number / DD, scale) + "dd";
+        } else if (number >= CC) {
+            return round(number / CC, scale) + "cc";
+        } else if (number >= BB) {
+            return round(number / BB, scale) + "bb";
+        } else if (number >= AA) {
+            return round(number / AA, scale) + "aa";
+        } else if (number >= TRILLION) {
             return round(number / TRILLION, scale) + "T";
         } else if (number >= BILLION) {
             return round(number / BILLION, scale) + "B";

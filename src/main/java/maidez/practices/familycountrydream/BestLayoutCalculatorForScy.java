@@ -52,7 +52,7 @@ public class BestLayoutCalculatorForScy {
                     board.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
                     board.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
                     board.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
-                    double totalIncome = board.getTotalIncome(playingStatusEnum, false);
+                    double totalIncome = board.getTotalIncome(playingStatusEnum);
                     if (totalIncome > maxIncome) {
                         bestIncome = board;
                         maxIncome = totalIncome;
@@ -62,7 +62,7 @@ public class BestLayoutCalculatorForScy {
                     board2.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
                     board2.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
                     board2.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
-                    double totalCoefficient = board2.getTotalIncome(playingStatusEnum, true);
+                    double totalCoefficient = board2.getTotalIncome(playingStatusEnum);
                     if (totalCoefficient > maxCoefficient) {
                         bestCoefficient = board2;
                         maxCoefficient = totalCoefficient;
@@ -85,7 +85,7 @@ public class BestLayoutCalculatorForScy {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.和谐家园);
+        List<Environment> environments = Lists.newArrayList(Environments.美丽街区, Environments.国庆);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

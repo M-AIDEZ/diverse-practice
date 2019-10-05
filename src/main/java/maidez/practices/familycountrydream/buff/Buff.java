@@ -15,5 +15,7 @@ public abstract class Buff {
         this.magnification = magnification;
     }
 
-    public abstract boolean takeEffect(Building building, PlayingStatusEnum playingStatusEnum);
+    public abstract boolean effectOnBuildings(Building building, PlayingStatusEnum playingStatusEnum);
+
+    public abstract boolean effectOnOffer();
 }

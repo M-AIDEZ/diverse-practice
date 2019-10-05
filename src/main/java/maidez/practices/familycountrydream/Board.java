@@ -73,7 +73,6 @@ public class Board {
     }
 
     public void print() {
-        System.out.println("============布局==============");
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < BUILDINGS.length; i++) {
             sb.append(BUILDINGS[i].getName()).append("    ").append(NumberUtils.format(BUILDING_INCOMES[i], 3)).append("     ").append(NumberUtils.format(BUILDING_COEFFICIENTS[i], 3)).append("        ");
@@ -82,7 +81,6 @@ public class Board {
                 sb = new StringBuilder();
             }
         }
-        System.out.println("=============================");
     }
 
     private void build(int position, BuildingTypeEnum buildingTypeEnum, Building after) {
@@ -138,7 +136,39 @@ public class Board {
 
     private List<Card> cards;
 
-    public double getTotalIncome(PlayingStatusEnum playingStatusEnum, boolean coefficientOnly) {
+    public double getOfferCoefficient() {
+        List<Buff> buildingBuffs = getBuildingBuffs();
+        List<Buff> policyBuffs = getPolicyBuffs();
+        List<Buff> cardBuffs = getCardBuffs();
+        List<Buff> environmentBuffs = getEnvironmentBuffs();
+        double buildingCoefficient = 0D;
+        for (Buff buildingBuff : buildingBuffs) {
+            if (buildingBuff.effectOnOffer()) {
+                buildingCoefficient += buildingBuff.getMagnification();
+            }
+        }
+        double policyCoefficient = 0D;
+        for (Buff policyBuff : policyBuffs) {
+            if (policyBuff.effectOnOffer()) {
+                policyCoefficient += policyBuff.getMagnification();
+            }
+        }
+        double cardCoefficient = 0D;
+        for (Buff cardBuff : cardBuffs) {
+            if (cardBuff.effectOnOffer()) {
+                cardCoefficient += cardBuff.getMagnification();
+            }
+        }
+        double environmentCoefficient = 0D;
+        for (Buff environmentBuff : environmentBuffs) {
+            if (environmentBuff.effectOnOffer()) {
+                environmentCoefficient += environmentBuff.getMagnification();
+            }
+        }
+        return buildingCoefficient + policyCoefficient + cardCoefficient + environmentCoefficient;
+    }
+
+    public double getTotalIncome(PlayingStatusEnum playingStatusEnum) {
         double totalIncome = 0D;
         List<Buff> buildingBuffs = getBuildingBuffs();
         List<Buff> policyBuffs = getPolicyBuffs();
@@ -151,29 +181,29 @@ public class Board {
             }
             double buildingCoefficient = 1D;
             for (Buff buildingBuff : buildingBuffs) {
-                if (buildingBuff.takeEffect(building, playingStatusEnum)) {
+                if (buildingBuff.effectOnBuildings(building, playingStatusEnum)) {
                     buildingCoefficient += buildingBuff.getMagnification();
                 }
             }
             double policyCoefficient = 1D;
             for (Buff policyBuff : policyBuffs) {
-                if (policyBuff.takeEffect(building, playingStatusEnum)) {
+                if (policyBuff.effectOnBuildings(building, playingStatusEnum)) {
                     policyCoefficient += policyBuff.getMagnification();
                 }
             }
             double cardCoefficient = 1D;
             for (Buff cardBuff : cardBuffs) {
-                if (cardBuff.takeEffect(building, playingStatusEnum)) {
+                if (cardBuff.effectOnBuildings(building, playingStatusEnum)) {
                     cardCoefficient += cardBuff.getMagnification();
                 }
             }
             double environmentCoefficient = 1D;
             for (Buff environmentBuff : environmentBuffs) {
-                if (environmentBuff.takeEffect(building, playingStatusEnum)) {
+                if (environmentBuff.effectOnBuildings(building, playingStatusEnum)) {
                     environmentCoefficient += environmentBuff.getMagnification();
                 }
             }
-            double income = (coefficientOnly ? 1D : building.getIncome()) * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
+            double income = building.getIncome() * buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
             BUILDING_INCOMES[i] = income;
             BUILDING_COEFFICIENTS[i] = buildingCoefficient * policyCoefficient * cardCoefficient * environmentCoefficient;
 //            System.out.println(building.getName() + "的收入：" + NumberUtils.format(income));

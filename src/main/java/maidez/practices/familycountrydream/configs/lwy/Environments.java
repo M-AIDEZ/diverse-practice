@@ -52,6 +52,19 @@ public class Environments {
                     new ParticularBuildingBuff(1, "便利店")
             ));
 
+    public static final Environment 头雁效应 = new Environment("头雁效应",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1, "民食斋"),
+                    new ParticularBuildingBuff(2, "企鹅机械")
+            ));
+
+    public static final Environment 四好农村路 = new Environment("四好农村路",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1, "加油站"),
+                    new ParticularBuildingBuff(2, "菜市场"),
+                    new ParticularBuildingBuff(1, "平房")
+            ));
+
     public static final Environment 国庆 = new Environment("国庆",
             Lists.newArrayList(
                     new OfferingBuff(0.2),

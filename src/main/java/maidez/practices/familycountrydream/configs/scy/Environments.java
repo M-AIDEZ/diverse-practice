@@ -40,9 +40,9 @@ public class Environments {
 
     public static final Environment 美丽街区 = new Environment("美丽街区",
             Lists.newArrayList(
-                    new ParticularBuildingBuff(2, "花园洋房"),
-                    new ParticularBuildingBuff(1, "钢结构房"),
-                    new ParticularBuildingBuff(1, "平房")
+                    new ParticularBuildingBuff(2, "人才公寓"),
+                    new ParticularBuildingBuff(1, "居民楼"),
+                    new ParticularBuildingBuff(1, "木屋")
             ));
 
     public static final Environment 国庆 = new Environment("国庆",

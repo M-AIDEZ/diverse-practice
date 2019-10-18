@@ -9,10 +9,10 @@ public enum PlayingStatusEnum {
     ONLINE(1D),
     OFFLINE(0.5D);
 
+    @Getter
+    private double coefficient;
+
     PlayingStatusEnum(double coefficient) {
         this.coefficient = coefficient;
     }
-
-    @Getter
-    private double coefficient;
 }

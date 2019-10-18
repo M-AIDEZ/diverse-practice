@@ -48,12 +48,11 @@ public class Cards {
     private static final Card 杭州湾跨海大桥 = new Card("杭州湾跨海大桥", new OfferingBuff(0.02));
     private static final Card 宁波舟山港 = new Card("宁波舟山港", new BuildingTypeBuff(0.3, BuildingTypeEnum.INDUSTRIAL));
     private static final Card 浙菜 = new Card("浙菜", new BuildingTypeBuff(0.3, BuildingTypeEnum.RESIDENTIAL));
-    //中国
-    private static final Card 中国制造 = new Card("中国制造", new BuildingTypeBuff(0.6, BuildingTypeEnum.INDUSTRIAL));
-
     public static final List<Card> ALL_CARDS = Lists.newArrayList(
             中共一大会址, 城隍庙豫园, 东方明珠电视塔, 世博会中国馆, 外滩, 浦东新区自贸区, 中国国际进口博览会, 上海美术电影制片厂, 石库门, 本帮菜,
             太湖, 昆曲, 江南园林, 大闸蟹, 南京长江大桥, 花果山, 华西村, 淮扬菜, 宜兴紫砂壶, 雨花台,
             西湖, 绿水青山就是金山银山的理念, 越剧, 义乌小商品, 世界互联网大会, 普陀山, 嘉兴南湖红船, 杭州湾跨海大桥, 宁波舟山港, 浙菜
     );
+    //中国
+    private static final Card 中国制造 = new Card("中国制造", new BuildingTypeBuff(0.6, BuildingTypeEnum.INDUSTRIAL));
 }

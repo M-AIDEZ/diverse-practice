@@ -31,6 +31,5 @@ public class Policies {
     private static final Policy 科教兴国 = new Policy("科教兴国", new PlayingStatusBuff(0.2, PlayingStatusEnum.OFFLINE));
 
 
-
-    public static final List<Policy> ALL_POLICIES = Lists.newArrayList(一带一路建设, 自由贸易区建设, 区域协调发展, 家国之光,全面深化改革, 全面依法治国, 科教兴国);
+    public static final List<Policy> ALL_POLICIES = Lists.newArrayList(一带一路建设, 自由贸易区建设, 区域协调发展, 家国之光, 全面深化改革, 全面依法治国, 科教兴国);
 }

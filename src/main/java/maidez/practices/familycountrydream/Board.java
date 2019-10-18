@@ -18,19 +18,40 @@ import java.util.stream.Collectors;
  */
 public class Board {
 
+    private static final int BOUND = 3;
+    // buildings
+    private final Building[] BUILDINGS = new Building[BOUND * BOUND];
+    private final double[] BUILDING_INCOMES = new double[BOUND * BOUND];
+    private final double[] BUILDING_COEFFICIENTS = new double[BOUND * BOUND];
+    // other
+    private List<Policy> policies;
+    private List<Environment> environments;
+    private List<Card> cards;
+
     public Board(List<Policy> policies, List<Environment> environments, List<Card> cards) {
         this.policies = policies;
         this.environments = environments;
         this.cards = cards;
     }
 
-    private static final int BOUND = 3;
-    // buildings
-    private final Building[] BUILDINGS = new Building[BOUND * BOUND];
+    private static int getOffset(BuildingTypeEnum buildingTypeEnum) {
+        switch (buildingTypeEnum) {
+            case INDUSTRIAL:
+                return 0 * BOUND;
+            case COMMERCIAL:
+                return 1 * BOUND;
+            case RESIDENTIAL:
+                return 2 * BOUND;
+            default:
+                throw new IllegalArgumentException("Unknown buildingTypeEnum " + buildingTypeEnum.getDesc());
+        }
+    }
 
-    private final double[] BUILDING_INCOMES = new double[BOUND * BOUND];
-
-    private final double[] BUILDING_COEFFICIENTS = new double[BOUND * BOUND];
+    private static void checkPosition(int position) {
+        if (position < 1 || position > BOUND) {
+            throw new IllegalArgumentException("超出建筑范围");
+        }
+    }
 
     public void industrial(int position, Building.IndustrialBuilding toBuild) {
         build(position, BuildingTypeEnum.INDUSTRIAL, toBuild);
@@ -57,7 +78,6 @@ public class Board {
         build(2, BuildingTypeEnum.COMMERCIAL, toBuild2);
         build(3, BuildingTypeEnum.COMMERCIAL, toBuild3);
     }
-
 
     public void residential(int position, Building.ResidentialBuilding toBuild) {
         build(position, BuildingTypeEnum.RESIDENTIAL, toBuild);
@@ -95,25 +115,6 @@ public class Board {
 //        System.out.println(position + "号" + buildingTypeEnum.getDesc() + "用地：已从 [ " + beforeName + " ] 改建为 [ " + afterName + " ] 。");
     }
 
-    private static int getOffset(BuildingTypeEnum buildingTypeEnum) {
-        switch (buildingTypeEnum) {
-            case INDUSTRIAL:
-                return 0 * BOUND;
-            case COMMERCIAL:
-                return 1 * BOUND;
-            case RESIDENTIAL:
-                return 2 * BOUND;
-            default:
-                throw new IllegalArgumentException("Unknown buildingTypeEnum " + buildingTypeEnum.getDesc());
-        }
-    }
-
-    private static void checkPosition(int position) {
-        if (position < 1 || position > BOUND) {
-            throw new IllegalArgumentException("超出建筑范围");
-        }
-    }
-
     private void checkDuplicate(Building after) {
         if (after != null) {
             Set<String> builtSet = Sets.newHashSet();
@@ -127,14 +128,6 @@ public class Board {
             }
         }
     }
-
-
-    // other
-    private List<Policy> policies;
-
-    private List<Environment> environments;
-
-    private List<Card> cards;
 
     public double getOfferCoefficient() {
         List<Buff> buildingBuffs = getBuildingBuffs();

@@ -65,6 +65,13 @@ public class Environments {
                     new ParticularBuildingBuff(1, "平房")
             ));
 
+    public static final Environment 国庆 = new Environment("国庆",
+            Lists.newArrayList(
+                    new OfferingBuff(0.2),
+                    new PlayingStatusBuff(1, PlayingStatusEnum.ONLINE),
+                    new PlayingStatusBuff(1, PlayingStatusEnum.OFFLINE)
+            ));
+
     public static final Environment 电子商务 = new Environment("电子商务",
             Lists.newArrayList(
                     new ParticularBuildingBuff(1.5, "纺织厂"),
@@ -72,10 +79,17 @@ public class Environments {
                     new ParticularBuildingBuff(1, "便利店")
             ));
 
-    public static final Environment 国庆 = new Environment("国庆",
+    public static final Environment 市民文化节 = new Environment("市民文化节",
             Lists.newArrayList(
-                    new OfferingBuff(0.2),
-                    new PlayingStatusBuff(1, PlayingStatusEnum.ONLINE),
-                    new PlayingStatusBuff(1, PlayingStatusEnum.OFFLINE)
+                    new ParticularBuildingBuff(2, "图书馆"),
+                    new PlayingStatusBuff(0.2, PlayingStatusEnum.ONLINE)
             ));
+
+    public static final Environment 家电下乡 = new Environment("家电下乡",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1, "商贸中心"),
+                    new ParticularBuildingBuff(2, "零件厂"),
+                    new ParticularBuildingBuff(1, "五金店")
+            ));
+
 }

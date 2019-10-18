@@ -106,7 +106,7 @@ public class BestLayoutCalculatorForLwy {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.电子商务);
+        List<Environment> environments = Lists.newArrayList(Environments.市民文化节);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

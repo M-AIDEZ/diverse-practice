@@ -62,7 +62,7 @@ public class Cards {
     private static final Card 所有 = new Card("所有", new GlobalBuff(3.6));
     private static final Card 供货 = new Card("供货", new OfferingBuff(0.42));
     private static final Card 在线 = new Card("在线", new PlayingStatusBuff(3.6, PlayingStatusEnum.ONLINE));
-    private static final Card 离线 = new Card("离线", new PlayingStatusBuff(3.3, PlayingStatusEnum.ONLINE));
+    private static final Card 离线 = new Card("离线", new PlayingStatusBuff(3.3, PlayingStatusEnum.OFFLINE));
     private static final Card 住宅 = new Card("住宅", new BuildingTypeBuff(5.1, BuildingTypeEnum.RESIDENTIAL));
     private static final Card 商业 = new Card("商业", new BuildingTypeBuff(6.9, BuildingTypeEnum.COMMERCIAL));
     private static final Card 工业 = new Card("工业", new BuildingTypeBuff(7.2, BuildingTypeEnum.INDUSTRIAL));

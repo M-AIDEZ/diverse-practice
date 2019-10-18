@@ -117,4 +117,10 @@ public class Environments {
                     new ParticularBuildingBuff(1, "五金店"),
                     new ParticularBuildingBuff(1, "电厂")
             ));
+
+    public static final Environment 服务示范区 = new Environment("服务示范区",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1.5, "便利店"),
+                    new ParticularBuildingBuff(1.5, "菜市场")
+            ));
 }

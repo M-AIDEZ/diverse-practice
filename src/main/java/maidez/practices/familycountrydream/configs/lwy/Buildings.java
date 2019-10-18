@@ -21,7 +21,7 @@ public class Buildings {
             new ParticularBuildingBuff(5, "图书城")
     ));
 
-    public static final Building.IndustrialBuilding 食品厂 = new Building.IndustrialBuilding("食品厂", 196 * AA
+    public static final Building.IndustrialBuilding 食品厂 = new Building.IndustrialBuilding("食品厂", 423 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "菜市场")
     ));
@@ -74,7 +74,7 @@ public class Buildings {
 
     //commercial buildings
 
-    public static final Building.CommercialBuilding 菜市场 = new Building.CommercialBuilding("菜市场", 2.5 * BB
+    public static final Building.CommercialBuilding 菜市场 = new Building.CommercialBuilding("菜市场", 2.67 * BB
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "食品厂")
     ));

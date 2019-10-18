@@ -40,8 +40,8 @@ public class BestLayoutCalculatorForLwy {
         Board bestOnline = null;
         double maxOnlineIncome = Double.MIN_VALUE;
 
-//        Board bestOffline = null;
-//        double maxOfflineIncome = Double.MIN_VALUE;
+        Board bestOffline = null;
+        double maxOfflineIncome = Double.MIN_VALUE;
 
         Board bestOffer = null;
         double bestOfferIncome = Double.MIN_VALUE;
@@ -65,15 +65,15 @@ public class BestLayoutCalculatorForLwy {
                     }
 
 //                    offline
-//                    Board offlineBoard = buildBoard();
-//                    offlineBoard.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
-//                    offlineBoard.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
-//                    offlineBoard.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
-//                    double offlineIncome = offlineBoard.getTotalIncome(PlayingStatusEnum.OFFLINE);
-//                    if (offlineIncome > maxOfflineIncome) {
-//                        bestOffline = offlineBoard;
-//                        maxOfflineIncome = offlineIncome;
-//                    }
+                    Board offlineBoard = buildBoard();
+                    offlineBoard.industrial(ibCombination.get(0), ibCombination.get(1), ibCombination.get(2));
+                    offlineBoard.commercial(cbCombination.get(0), cbCombination.get(1), cbCombination.get(2));
+                    offlineBoard.residential(rbCombination.get(0), rbCombination.get(1), rbCombination.get(2));
+                    double offlineIncome = offlineBoard.getTotalIncome(PlayingStatusEnum.OFFLINE);
+                    if (offlineIncome > maxOfflineIncome) {
+                        bestOffline = offlineBoard;
+                        maxOfflineIncome = offlineIncome;
+                    }
 
                     //offer
                     Board offerBoard = buildBoard();
@@ -95,9 +95,9 @@ public class BestLayoutCalculatorForLwy {
         bestOnline.print();
         System.out.println("总收入：" + NumberUtils.format(maxOnlineIncome, 3));
 
-//        System.out.println("\n=========最佳离线收入=========\n");
-//        bestOffline.print();
-//        System.out.println("总收入：" + NumberUtils.format(maxOfflineIncome, 3));
+        System.out.println("\n=========最佳离线收入=========\n");
+        bestOffline.print();
+        System.out.println("总收入：" + NumberUtils.format(maxOfflineIncome, 3));
 
         System.out.println("\n=========最佳收货加成========\n");
         bestOffer.print();
@@ -106,7 +106,7 @@ public class BestLayoutCalculatorForLwy {
     }
 
     private static Board buildBoard() {
-        List<Environment> environments = Lists.newArrayList(Environments.四好农村路, Environments.国庆);
+        List<Environment> environments = Lists.newArrayList(Environments.电子商务);
         return new Board(Policies.ALL_POLICIES, environments, Cards.ALL_CARDS);
     }
 

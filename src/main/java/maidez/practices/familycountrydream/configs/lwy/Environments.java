@@ -65,6 +65,13 @@ public class Environments {
                     new ParticularBuildingBuff(1, "平房")
             ));
 
+    public static final Environment 电子商务 = new Environment("电子商务",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1.5, "纺织厂"),
+                    new ParticularBuildingBuff(1, "服装店"),
+                    new ParticularBuildingBuff(1, "便利店")
+            ));
+
     public static final Environment 国庆 = new Environment("国庆",
             Lists.newArrayList(
                     new OfferingBuff(0.2),

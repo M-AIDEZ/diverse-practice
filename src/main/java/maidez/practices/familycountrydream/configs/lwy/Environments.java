@@ -123,4 +123,12 @@ public class Environments {
                     new ParticularBuildingBuff(1.5, "便利店"),
                     new ParticularBuildingBuff(1.5, "菜市场")
             ));
+
+    public static final Environment 四好农村路2 = new Environment("四好农村路2",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1, "加油站"),
+                    new ParticularBuildingBuff(2, "菜市场"),
+                    new ParticularBuildingBuff(1, "平房")
+            ));
+
 }

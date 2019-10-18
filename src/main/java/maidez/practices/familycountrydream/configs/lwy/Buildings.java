@@ -54,7 +54,7 @@ public class Buildings {
             new ParticularBuildingBuff(2, "企鹅机械")
     ));
 
-    public static final Building.IndustrialBuilding 企鹅机械 = new Building.IndustrialBuilding("企鹅机械", 13 * AA
+    public static final Building.IndustrialBuilding 企鹅机械 = new Building.IndustrialBuilding("企鹅机械", 59.7 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "零件厂"),
             new GlobalBuff(0.3)
@@ -65,7 +65,7 @@ public class Buildings {
             new PlayingStatusBuff(0.3, PlayingStatusEnum.OFFLINE)
     ));
 
-    public static final Building.IndustrialBuilding 人民石油 = new Building.IndustrialBuilding("人民石油", 9.8 * AA
+    public static final Building.IndustrialBuilding 人民石油 = new Building.IndustrialBuilding("人民石油", 44.9 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "加油站"),
             new PlayingStatusBuff(0.3, PlayingStatusEnum.OFFLINE)
@@ -105,13 +105,13 @@ public class Buildings {
             new ParticularBuildingBuff(5, "图书城")
     ));
 
-    public static final Building.CommercialBuilding 民食斋 = new Building.CommercialBuilding("民食斋", 14.9 * AA
+    public static final Building.CommercialBuilding 民食斋 = new Building.CommercialBuilding("民食斋", 68.3 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "空中别墅"),
             new PlayingStatusBuff(0.6, PlayingStatusEnum.ONLINE)
     ));
 
-    public static final Building.CommercialBuilding 媒体之声 = new Building.CommercialBuilding("媒体之声", 15.8 * AA
+    public static final Building.CommercialBuilding 媒体之声 = new Building.CommercialBuilding("媒体之声", 72.5 * AA
             , Lists.newArrayList(
             new PlayingStatusBuff(0.3, PlayingStatusEnum.OFFLINE),
             new GlobalBuff(0.15)
@@ -151,10 +151,10 @@ public class Buildings {
             new BuildingTypeBuff(1, BuildingTypeEnum.RESIDENTIAL)
     ));
 
-    public static final Building.ResidentialBuilding 人才公寓 = new Building.ResidentialBuilding("人才公寓", 54.8 * AA
+    public static final Building.ResidentialBuilding 人才公寓 = new Building.ResidentialBuilding("人才公寓", 274 * AA
             , Lists.newArrayList(
-            new PlayingStatusBuff(0.8, PlayingStatusEnum.ONLINE),
-            new BuildingTypeBuff(0.6, BuildingTypeEnum.INDUSTRIAL)
+            new PlayingStatusBuff(1, PlayingStatusEnum.ONLINE),
+            new BuildingTypeBuff(0.75, BuildingTypeEnum.INDUSTRIAL)
     ));
 
     public static final Building.ResidentialBuilding 小型公寓 = new Building.ResidentialBuilding("小型公寓", 231 * AA
@@ -174,13 +174,13 @@ public class Buildings {
             new OfferingBuff(0.4)
     ));
 
-    public static final Building.ResidentialBuilding 空中别墅 = new Building.ResidentialBuilding("空中别墅", 14.9 * AA
+    public static final Building.ResidentialBuilding 空中别墅 = new Building.ResidentialBuilding("空中别墅", 68.3 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(3, "民食斋"),
             new PlayingStatusBuff(0.6, PlayingStatusEnum.ONLINE)
     ));
 
-    public static final Building.ResidentialBuilding 复兴公馆 = new Building.ResidentialBuilding("复兴公馆", 5.46 * AA
+    public static final Building.ResidentialBuilding 复兴公馆 = new Building.ResidentialBuilding("复兴公馆", 25 * AA
             , Lists.newArrayList(
             new PlayingStatusBuff(0.2, PlayingStatusEnum.OFFLINE),
             new OfferingBuff(0.2)

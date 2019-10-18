@@ -92,4 +92,29 @@ public class Environments {
                     new ParticularBuildingBuff(1, "五金店")
             ));
 
+    public static final Environment 扶贫攻坚 = new Environment("扶贫攻坚",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(1.5, "木屋"),
+                    new ParticularBuildingBuff(1.5, "平房"),
+                    new ParticularBuildingBuff(1, "小型公寓")
+            ));
+
+    public static final Environment 文化蓝图 = new Environment("文化蓝图",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(2, "空中别墅"),
+                    new PlayingStatusBuff(0.2, PlayingStatusEnum.ONLINE)
+            ));
+
+    public static final Environment 护校安园 = new Environment("护校安园",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(2, "学校"),
+                    new ParticularBuildingBuff(2, "木屋")
+            ));
+
+    public static final Environment 家电下乡2 = new Environment("家电下乡2",
+            Lists.newArrayList(
+                    new ParticularBuildingBuff(2, "零件厂"),
+                    new ParticularBuildingBuff(1, "五金店"),
+                    new ParticularBuildingBuff(1, "电厂")
+            ));
 }

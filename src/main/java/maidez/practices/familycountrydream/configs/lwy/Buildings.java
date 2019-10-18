@@ -16,7 +16,7 @@ import static maidez.practices.familycountrydream.components.Constants.BB;
  */
 public class Buildings {
     //industrial buildings
-    public static final Building.IndustrialBuilding 造纸厂 = new Building.IndustrialBuilding("造纸厂", 9.85 * AA
+    public static final Building.IndustrialBuilding 造纸厂 = new Building.IndustrialBuilding("造纸厂", 196 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "图书城")
     ));
@@ -32,7 +32,7 @@ public class Buildings {
             new BuildingTypeBuff(0.6, BuildingTypeEnum.COMMERCIAL)
     ));
 
-    public static final Building.IndustrialBuilding 木材厂 = new Building.IndustrialBuilding("木材厂", 9.85 * AA
+    public static final Building.IndustrialBuilding 木材厂 = new Building.IndustrialBuilding("木材厂", 196 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "木屋")
     ));
@@ -84,7 +84,7 @@ public class Buildings {
             new ParticularBuildingBuff(5, "零件厂")
     ));
 
-    public static final Building.CommercialBuilding 便利店 = new Building.CommercialBuilding("便利店", 9.85 * AA
+    public static final Building.CommercialBuilding 便利店 = new Building.CommercialBuilding("便利店", 196 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "居民楼")
     ));
@@ -100,7 +100,7 @@ public class Buildings {
             new ParticularBuildingBuff(4, "造纸厂")
     ));
 
-    public static final Building.CommercialBuilding 学校 = new Building.CommercialBuilding("学校", 9.85 * AA
+    public static final Building.CommercialBuilding 学校 = new Building.CommercialBuilding("学校", 196 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "图书城")
     ));
@@ -119,8 +119,8 @@ public class Buildings {
 
     public static final Building.CommercialBuilding 商贸中心 = new Building.CommercialBuilding("商贸中心", 10 * AA
             , Lists.newArrayList(
-            new ParticularBuildingBuff(3, "花园洋房"),
-            new OfferingBuff(0.3)
+            new ParticularBuildingBuff(4, "花园洋房"),
+            new OfferingBuff(0.4)
     ));
 
     public static final Building.CommercialBuilding 加油站 = new Building.CommercialBuilding("加油站", 47.2 * AA

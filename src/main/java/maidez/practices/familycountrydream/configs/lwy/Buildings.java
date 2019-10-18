@@ -79,7 +79,7 @@ public class Buildings {
             new ParticularBuildingBuff(5, "食品厂")
     ));
 
-    public static final Building.CommercialBuilding 五金店 = new Building.CommercialBuilding("五金店", 9.85 * AA
+    public static final Building.CommercialBuilding 五金店 = new Building.CommercialBuilding("五金店", 196 * AA
             , Lists.newArrayList(
             new ParticularBuildingBuff(5, "零件厂")
     ));

@@ -9,7 +9,11 @@ import static maidez.practices.familycountrydream.components.Constants.*;
  */
 public class NumberUtils {
     public static String format(double number, int scale) {
-        if (number >= DD) {
+        if (number >= FF) {
+            return round(number / FF, scale) + "ff";
+        } else if (number >= EE) {
+            return round(number / EE, scale) + "dd";
+        } else if (number >= DD) {
             return round(number / DD, scale) + "dd";
         } else if (number >= CC) {
             return round(number / CC, scale) + "cc";

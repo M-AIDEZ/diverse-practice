@@ -162,10 +162,10 @@ public class Buildings {
             new OfferingBuff(0.7)
     ));
 
-    public static final Building.ResidentialBuilding 中式小楼 = new Building.ResidentialBuilding("中式小楼", 13.7 * AA
+    public static final Building.ResidentialBuilding 中式小楼 = new Building.ResidentialBuilding("中式小楼", 54.8 * AA
             , Lists.newArrayList(
-            new PlayingStatusBuff(0.6, PlayingStatusEnum.ONLINE),
-            new BuildingTypeBuff(0.45, BuildingTypeEnum.RESIDENTIAL)
+            new PlayingStatusBuff(0.8, PlayingStatusEnum.ONLINE),
+            new BuildingTypeBuff(0.6, BuildingTypeEnum.RESIDENTIAL)
     ));
 
     public static final Building.ResidentialBuilding 花园洋房 = new Building.ResidentialBuilding("花园洋房", 40 * AA

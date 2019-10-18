@@ -20,5 +20,9 @@ public class Constants {
 
     public static final double DD = CC * KILO;
 
+    public static final double EE = DD * KILO;
+
+    public static final double FF = EE * KILO;
+
 
 }

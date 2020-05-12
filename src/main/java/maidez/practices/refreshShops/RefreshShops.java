@@ -28,9 +28,9 @@ public class RefreshShops {
         client = HttpClients.custom().setConnectionManager(cm).build();
     }
 
-    private static final String ACCESS_TOKEN = "eAHjYBS4sr2BUWHT_O6tj3SNxAoy01Pz83TT88tSi_Lyi3SLU4uALCuFpGQjcxNLCxNzC1MjE8sUsySTRBMt4xSjJGPL5JQUEwsnS4VbHfe-PdXVYDQiqNgCZKUDk8eFHz-3PtSNUjA1M0kytzRLTDHTMjSxNEhKskw1NEpOSTY1tzRINkyxBAAPdTX0**eAEFwQcBwEAIBDBLzAJy_hj-JTSxj2z3siBP1W_GAz5rZB6Jauam0AVxKkroSV7XrOLYzH87EBGC";
+    private static final String ACCESS_TOKEN = "eAHjYBS4sr2BUWH78z2LvukaiRVkpqfm5-mm55elFuXlF-kWpxYBWVYKSclG5iaWFibmFqZGJpYpZkkmiSZaxilGScaWySkpJhZONgo7v196_lNXg9GIoGILkJUOTB6rn79b9lW3iZEhSsHC2DQ51cjIzMxCy8jExBJoVVqSiWlyclqagXGSgbEZAAGENqg**eAEFwQkBwDAIA0BLfC2NnADDv4TdWXpm2upNPYXYh2lR2iR6MIEteeeSlG6w4vO57cbwNZkfKYARtg";
 
-    private static final String COOKIE = "_lxsdk_cuid=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _lxsdk=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _hc.v=dd20ec08-6b4e-0680-e70e-50544d777b62.1560247557; _ga=GA1.2.1985983270.1560398688; uu=87a1e0c0-a38d-11e9-90ba-99fe0b367d70; cid=1; ai=1; skmtutc=N2ZwRCIKYWZR7q7gGbaItLNk7jQZC3zCruYu6uo3oDfvaqCTX/iqBE9XBPi8qRex-QmYp8ysYwdbPNTAQe+YfBwMpljY=; u=1111938539; SSO_SID=eAHjYBS4sr2BUWHupJWdj3SNuCySTFJMLQ0TE02tFJKSjcxNLC1MzC1MjUwsU8ySTBJNtIxTjJKMLZNTUkwsnCwV9p_acO6prgajEUHFFiBrHJg8tu860_tQN0rBKCk1yTjROMk0UcvcJNHC0MLc1NzYxNIyKS3FzCjFxBQAIuAuvw**eAEFwQkBwDAIA0BLoeMpcggF_xJ212QvvQmFP0B3_G2FdAjFkuvGyYN75IwV1z4qpAJ7s-UHZgUSJw; access_token=eAHjYBS4sr2BUWHT_O6tj3SNxAoy01Pz83TT88tSi_Lyi3SLU4uALCuFpGQjcxNLCxNzC1MjE8sUsySTRBMt4xSjJGPL5JQUEwsnS4VbHfe-PdXVYDQiqNgCZKUDk8eFHz-3PtSNUjA1M0kytzRLTDHTMjSxNEhKskw1NEpOSTY1tzRINkyxBAAPdTX0**eAEFwQcBwEAIBDBLzAJy_hj-JTSxj2z3siBP1W_GAz5rZB6Jauam0AVxKkroSV7XrOLYzH87EBGC; _lxsdk_s=16e25a07d60-294-02-d91%7C%7C66; JSESSIONID=F49FF1B564CC97BBEB90BC13E3D86E64";
+    private static final String COOKIE = "_lxsdk_cuid=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _lxsdk=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _hc.v=dd20ec08-6b4e-0680-e70e-50544d777b62.1560247557; _ga=GA1.2.1985983270.1560398688; uu=87a1e0c0-a38d-11e9-90ba-99fe0b367d70; cid=1; ai=1; skmtutc=N2ZwRCIKYWZR7q7gGbaItLNk7jQZC3zCruYu6uo3oDfvaqCTX/iqBE9XBPi8qRex-QmYp8ysYwdbPNTAQe+YfBwMpljY=; access_token=eAHjYBS4sr2BUWH78z2LvukaiRVkpqfm5-mm55elFuXlF-kWpxYBWVYKSclG5iaWFibmFqZGJpYpZkkmiSZaxilGScaWySkpJhZONgo7v196_lNXg9GIoGILkJUOTB6rn79b9lW3iZEhSsHC2DQ51cjIzMxCy8jExBJoVVqSiWlyclqagXGSgbEZAAGENqg**eAEFwQkBwDAIA0BLfC2NnADDv4TdWXpm2upNPYXYh2lR2iR6MIEteeeSlG6w4vO57cbwNZkfKYARtg; _gid=GA1.2.1420770563.1577790107; _lxsdk_s=16f607f0974-cbb-bb-40c%7C%7C3; JSESSIONID=537CE6FFDC265A7C99140652B5907B6D";
 
     private static final String SHOP_IDS = "{{shopIds}}";
 
@@ -48,7 +48,7 @@ public class RefreshShops {
 
     private static List<Integer> readFromFile() throws IOException {
         List<Integer> shopIds = Lists.newArrayList();
-        File file = new File("/Users/luwenyi/Desktop/ShopsToFresh2.txt");
+        File file = new File("/Users/luwenyi/Desktop/TPRotateShop (1).txt");
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String strLine = null;
         int lineCount = 1;

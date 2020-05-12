@@ -28,13 +28,11 @@ public class RefreshShops {
         client = HttpClients.custom().setConnectionManager(cm).build();
     }
 
-    private static final String ACCESS_TOKEN = "eAHjYBS4sr2BUWH78z2LvukaiRVkpqfm5-mm55elFuXlF-kWpxYBWVYKSclG5iaWFibmFqZGJpYpZkkmiSZaxilGScaWySkpJhZONgo7v196_lNXg9GIoGILkJUOTB6rn79b9lW3iZEhSsHC2DQ51cjIzMxCy8jExBJoVVqSiWlyclqagXGSgbEZAAGENqg**eAEFwQkBwDAIA0BLfC2NnADDv4TdWXpm2upNPYXYh2lR2iR6MIEteeeSlG6w4vO57cbwNZkfKYARtg";
+    private static final String ACCESS_TOKEN = "";
+    private static final String COOKIE = "";
+    private static final String SHOP_IDS = "";
 
-    private static final String COOKIE = "_lxsdk_cuid=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _lxsdk=16b3f2467efc8-0da81e0d708eb7-37637e03-1fa400-16b3f2467efc8; _hc.v=dd20ec08-6b4e-0680-e70e-50544d777b62.1560247557; _ga=GA1.2.1985983270.1560398688; uu=87a1e0c0-a38d-11e9-90ba-99fe0b367d70; cid=1; ai=1; skmtutc=N2ZwRCIKYWZR7q7gGbaItLNk7jQZC3zCruYu6uo3oDfvaqCTX/iqBE9XBPi8qRex-QmYp8ysYwdbPNTAQe+YfBwMpljY=; access_token=eAHjYBS4sr2BUWH78z2LvukaiRVkpqfm5-mm55elFuXlF-kWpxYBWVYKSclG5iaWFibmFqZGJpYpZkkmiSZaxilGScaWySkpJhZONgo7v196_lNXg9GIoGILkJUOTB6rn79b9lW3iZEhSsHC2DQ51cjIzMxCy8jExBJoVVqSiWlyclqagXGSgbEZAAGENqg**eAEFwQkBwDAIA0BLfC2NnADDv4TdWXpm2upNPYXYh2lR2iR6MIEteeeSlG6w4vO57cbwNZkfKYARtg; _gid=GA1.2.1420770563.1577790107; _lxsdk_s=16f607f0974-cbb-bb-40c%7C%7C3; JSESSIONID=537CE6FFDC265A7C99140652B5907B6D";
-
-    private static final String SHOP_IDS = "{{shopIds}}";
-
-    private static final String METHOD = "{\"url\":\"http://service.dianping.com/apollo/shop/apolloShopService\",\"method\":\"refreshShops\",\"ip\":\"10.76.165.15\",\"projectName\":\"com.sankuai.dzs.pre_sales.shopservice\",\"paramTypes\":[\"java.util.List\"],\"paramValues\":[\"" + SHOP_IDS + "\"],\"validate\":false,\"direct\":false,\"version\":1}";
+    private static final String METHOD = "";
 
     public static void main(String[] args) throws IOException {
         List<Integer> integers = readFromFile();
@@ -61,7 +59,7 @@ public class RefreshShops {
     }
 
     private static void call(List<Integer> shopIds) {
-        HttpPost httpPost = new HttpPost("https://pigeon.sankuai.com/ajax/set/call/invoke");
+        HttpPost httpPost = new HttpPost("");
         httpPost.setConfig(RequestConfig.custom().setSocketTimeout(10000).build());
 
         httpPost.setHeader("Cookie", COOKIE);

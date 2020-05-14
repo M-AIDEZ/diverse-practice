@@ -14,6 +14,26 @@ public class ZigZagLevelOrder {
         }
     }
 
+    public int maximalSquare(char[][] matrix) {
+        int maxSideLength = 0;
+        for(int i = 0; i < matrix.length; i++) {
+            for(int j = 0; j < matrix[0].length; j ++) {
+                if(matrix[i][j] == 1) {
+                    int maxij;
+                    if(i == 0 || j == 0)
+                        maxij = matrix[i][j] - '0';
+                    else
+                        maxij = Math.max(matrix[i-1][j-1]- '0', Math.max(matrix[i][j-1]- '0', matrix[i-1][j]- '0')) + 1;
+
+                    matrix[i][j] = (char)maxij;
+                    maxSideLength = Math.max(maxSideLength, maxij);
+                }
+
+            }
+        }
+        return maxSideLength * maxSideLength;
+    }
+
     Queue<TreeNode> queue = new LinkedList<>();
     Stack<TreeNode> stack = new Stack<>();
 

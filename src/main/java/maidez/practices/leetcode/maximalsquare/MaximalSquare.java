@@ -1,4 +1,4 @@
-package maidez.practices.leetcode.maximalSquare;
+package maidez.practices.leetcode.maximalsquare;
 
 public class MaximalSquare {
     public int maximalSquare(char[][] matrix) {

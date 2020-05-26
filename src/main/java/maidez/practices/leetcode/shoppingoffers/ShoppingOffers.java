@@ -15,7 +15,8 @@ public class ShoppingOffers {
                 .replaceAll("[!?',;.]", " ")
                 .replaceAll("\\s\\s+", " ")
                 .trim();
-        Set<String> bannedSet = new HashSet<>(Arrays.asList(banned));
+//        Integer[] ints = new Integer[2];
+        Set<String> bannedSet = new HashSet<>();
         for (String s : paragraph.split(" ")) {
             if (bannedSet.contains(s)) {
                 continue;

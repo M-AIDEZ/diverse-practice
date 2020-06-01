@@ -3,7 +3,7 @@ package maidez.practices.calculator;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import maidez.practices.utils.NumberUtils;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Set;

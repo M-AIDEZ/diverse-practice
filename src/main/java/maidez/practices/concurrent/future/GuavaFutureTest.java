@@ -2,14 +2,8 @@ package maidez.practices.concurrent.future;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListeningExecutorService;
-import com.google.common.util.concurrent.MoreExecutors;
-import org.springframework.util.concurrent.ListenableFutureAdapter;
+import com.google.common.util.concurrent.*;
 
-import javax.xml.crypto.dsig.TransformService;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;

@@ -2,20 +2,25 @@ package maidez.parctices.mockitodemo;
 
 import maidez.practices.mockitodemo.MyFibonacci;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.mockito.InOrder;
 
 import static org.mockito.Mockito.*;
 
 public class MyFibonacciTest {
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
     @Test
     public void testMock_When_ThenReturn() {
 
         MyFibonacci mock = mock(MyFibonacci.class);
-
-        when(mock.fibonacci(0)).thenReturn(1234L);
-
+        long fibonacci = mock.fibonacci(0);
+        mock.fibonacci(123);
+        when(123L).thenReturn(123L);
         long result = mock.fibonacci(0);
-
         Assert.assertEquals(1234L, result);
     }
 
@@ -25,13 +30,10 @@ public class MyFibonacciTest {
         MyFibonacci myFibonacci = new MyFibonacci();
         MyFibonacci spy = spy(myFibonacci);
 
-        try {
-            when(spy.fibonacci(0)).thenReturn(1234L);
-        } catch (IllegalArgumentException e) {
-            //do nothing
-            return;
-        }
-        throw new RuntimeException("Failed to catch IllegalArgumentException");
+        long fibonacci = spy.fibonacci(0);
+        spy.fibonacci(1);
+        when(fibonacci).thenReturn(1234L);
+        thrown.expect(IllegalArgumentException.class);
     }
 
     @Test
@@ -49,6 +51,7 @@ public class MyFibonacciTest {
         MyFibonacci myFibonacci = new MyFibonacci();
         MyFibonacci spy = spy(myFibonacci);
 
+//        doReturn(1234L);
         doReturn(1234L).when(spy).fibonacci(0);
 
         long result = spy.fibonacci(0);
@@ -75,6 +78,7 @@ public class MyFibonacciTest {
 
         spy.fibonacci(10, true);
 
+        verify(spy, timeout(50)).fibonacci(eq(2), anyBoolean());
         verify(spy, times(17)).fibonacci(anyInt(), anyBoolean());
     }
 }

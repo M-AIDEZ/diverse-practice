@@ -13,23 +13,20 @@ public class LRUCache {
 
     private Node tail;
 
-    private static class Node {
-        Node prev;
-        Node next;
-        int key;
-        int value;
-
-        public Node(Node next, int key, int value) {
-            this.next = next;
-            this.key = key;
-            this.value = value;
-            if (next != null) next.prev = this;
-        }
-    }
-
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.cache = new HashMap<>();
+    }
+
+    public static void main(String[] args) {
+//        ["LRUCache","put","get","put","get","get"]
+//[[1],[2,1],[2],[3,2],[2],[3]]
+        LRUCache cache = new LRUCache(1 /* 缓存容量 */);
+        cache.put(2, 1);
+        System.out.println(cache.get(2));
+        cache.put(3, 2);
+        System.out.println(cache.get(2));
+        System.out.println(cache.get(3));
     }
 
     public int get(int key) {
@@ -79,14 +76,17 @@ public class LRUCache {
         }
     }
 
-    public static void main(String[] args) {
-//        ["LRUCache","put","get","put","get","get"]
-//[[1],[2,1],[2],[3,2],[2],[3]]
-        LRUCache cache = new LRUCache(1 /* 缓存容量 */);
-        cache.put(2, 1);
-        System.out.println(cache.get(2));
-        cache.put(3, 2);
-        System.out.println(cache.get(2));
-        System.out.println(cache.get(3));
+    private static class Node {
+        Node prev;
+        Node next;
+        int key;
+        int value;
+
+        public Node(Node next, int key, int value) {
+            this.next = next;
+            this.key = key;
+            this.value = value;
+            if (next != null) next.prev = this;
+        }
     }
 }

@@ -1,15 +1,6 @@
 package maidez.practices.algorithm.leetcode.mergetwolist;
 
 public class MergeTwoList {
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -34,5 +25,14 @@ public class MergeTwoList {
         cur.next = index1 == null ? index2 : index1;
         return demon.next;
 
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

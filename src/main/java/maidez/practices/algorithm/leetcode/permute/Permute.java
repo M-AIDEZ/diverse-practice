@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Permute {
+    public static void main(String[] args) {
+        Permute permute = new Permute();
+        permute.permute(new int[]{1, 2, 3});
+    }
+
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         if (nums.length > 0) permute(result, new int[nums.length], 0, nums, new boolean[nums.length]);
@@ -29,10 +34,5 @@ public class Permute {
                 permute(result, newP, i + 1, nums, newTaken);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Permute permute = new Permute();
-        permute.permute(new int[]{1, 2, 3});
     }
 }

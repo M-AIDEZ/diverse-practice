@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.maxareaofisland;
 
 public class MaxAreaOfIsland {
+    public static void main(String[] args) {
+        MaxAreaOfIsland maxAreaOfIsland = new MaxAreaOfIsland();
+        maxAreaOfIsland.maxAreaOfIsland(new int[][]{{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 1, 1}, {0, 0, 0, 1, 1}});
+    }
+
     public int maxAreaOfIsland(int[][] grid) {
         int max = 0;
         int[][] tripped = new int[grid.length][grid[0].length];
@@ -32,10 +37,5 @@ public class MaxAreaOfIsland {
                     + trip(i, j - 1, grid, tripped)
                     + trip(i, j + 1, grid, tripped);
         }
-    }
-
-    public static void main(String[] args) {
-        MaxAreaOfIsland maxAreaOfIsland = new MaxAreaOfIsland();
-        maxAreaOfIsland.maxAreaOfIsland(new int[][]{{1, 1, 0, 0, 0}, {1, 1, 0, 0, 0}, {0, 0, 0, 1, 1}, {0, 0, 0, 1, 1}});
     }
 }

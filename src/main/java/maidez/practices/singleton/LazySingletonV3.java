@@ -20,15 +20,15 @@ public class LazySingletonV3 implements Serializable {
         }
     }
 
+    public static LazySingletonV3 getInstance() {
+        return LazySingletonV3.LazySingletonHolder.instance;
+    }
+
     /**
      * 内部类只有在被调用时才会被加载
      */
     private static class LazySingletonHolder {
         private static final LazySingletonV3 instance = new LazySingletonV3();
-    }
-
-    public static LazySingletonV3 getInstance() {
-        return LazySingletonV3.LazySingletonHolder.instance;
     }
 
 }

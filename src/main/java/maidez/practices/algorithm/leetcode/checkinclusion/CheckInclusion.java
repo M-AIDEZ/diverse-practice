@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.checkinclusion;
 
 public class CheckInclusion {
+    public static void main(String[] args) {
+        CheckInclusion checkInclusion = new CheckInclusion();
+        System.out.println(checkInclusion.checkInclusion("adc", "dadc"));
+    }
+
     public boolean checkInclusion(String s1, String s2) {
         if (s1.length() > s2.length()) return false;
         int[] s1Chars = new int[26];
@@ -21,10 +26,5 @@ public class CheckInclusion {
             end++;
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        CheckInclusion checkInclusion = new CheckInclusion();
-        System.out.println(checkInclusion.checkInclusion("adc", "dadc"));
     }
 }

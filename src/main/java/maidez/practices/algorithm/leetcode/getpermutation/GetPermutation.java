@@ -6,6 +6,12 @@ import java.util.Set;
 public class GetPermutation {
     private static final int[] P = new int[]{1, 1, 2, 6, 24, 120, 720, 5040, 40320};
 
+    public static void main(String[] args) {
+        GetPermutation getPermutation = new GetPermutation();
+//        System.out.println(getPermutation.getPermutation(4, 9));
+        System.out.println(getPermutation.getPermutation(8, 31492));
+    }
+
     public String getPermutation(int n, int k) {
         Set<Integer> used = new HashSet<>();
         int[] number = new int[n];
@@ -39,11 +45,5 @@ public class GetPermutation {
             tmp++;
         }
         return -1;
-    }
-
-    public static void main(String[] args) {
-        GetPermutation getPermutation = new GetPermutation();
-//        System.out.println(getPermutation.getPermutation(4, 9));
-        System.out.println(getPermutation.getPermutation(8, 31492));
     }
 }

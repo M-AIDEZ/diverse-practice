@@ -2,14 +2,9 @@ package maidez.practices.algorithm.leetcode.buildtree;
 
 public class BuildTree {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
+    public static void main(String[] args) {
+        BuildTree buildTree = new BuildTree();
+        buildTree.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
     }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -37,8 +32,13 @@ public class BuildTree {
         return node;
     }
 
-    public static void main(String[] args) {
-        BuildTree buildTree = new BuildTree();
-        buildTree.buildTree(new int[]{3, 9, 20, 15, 7}, new int[]{9, 3, 15, 20, 7});
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

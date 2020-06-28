@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.longestpalindrome;
 
 public class LongestPalindrome {
+    public static void main(String[] args) {
+        LongestPalindrome longestPalindrome = new LongestPalindrome();
+        longestPalindrome.longestPalindrome("cbbdbabdac");
+    }
+
     public String longestPalindrome(String s) {
         int max = 0;
         int maxI = 0;
@@ -30,10 +35,5 @@ public class LongestPalindrome {
             }
         }
         return s.substring(maxI, maxJ + 1);
-    }
-
-    public static void main(String[] args) {
-        LongestPalindrome longestPalindrome = new LongestPalindrome();
-        longestPalindrome.longestPalindrome("cbbdbabdac");
     }
 }

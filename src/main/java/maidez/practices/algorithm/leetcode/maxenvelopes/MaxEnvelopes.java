@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class MaxEnvelopes {
 
+    public static void main(String[] args) {
+        MaxEnvelopes maxEnvelopes = new MaxEnvelopes();
+        maxEnvelopes.maxEnvelopes(new int[][]{{15, 8}, {2, 20}, {2, 14}, {4, 17}, {8, 19}, {8, 9}, {5, 7}, {11, 19}, {8, 11}, {13, 11}, {2, 13}, {11, 19}, {8, 11}, {13, 11}, {2, 13}, {11, 19}, {16, 1}, {18, 13}, {14, 17}, {18, 19}});
+    }
+
     public int maxEnvelopes(int[][] envelopes) {
         if (envelopes == null || envelopes.length == 0) return 0;
         if (envelopes.length == 1) return 1;
@@ -45,11 +50,5 @@ public class MaxEnvelopes {
         if (res <= length) {
             minOfLengthN[res] = i;
         }
-    }
-
-
-    public static void main(String[] args) {
-        MaxEnvelopes maxEnvelopes = new MaxEnvelopes();
-        maxEnvelopes.maxEnvelopes(new int[][]{{15, 8}, {2, 20}, {2, 14}, {4, 17}, {8, 19}, {8, 9}, {5, 7}, {11, 19}, {8, 11}, {13, 11}, {2, 13}, {11, 19}, {8, 11}, {13, 11}, {2, 13}, {11, 19}, {16, 1}, {18, 13}, {14, 17}, {18, 19}});
     }
 }

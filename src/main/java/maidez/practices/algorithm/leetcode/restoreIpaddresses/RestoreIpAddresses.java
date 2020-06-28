@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RestoreIpAddresses {
+    public static void main(String[] args) {
+        RestoreIpAddresses restoreIpAddresses = new RestoreIpAddresses();
+        restoreIpAddresses.restoreIpAddresses("010010");
+        restoreIpAddresses.restoreIpAddresses("0000");
+        restoreIpAddresses.restoreIpAddresses("25525511135");
+    }
+
     public List<String> restoreIpAddresses(String s) {
         List<String> result = new ArrayList<>();
         if (s.length() < 4 || s.length() > 12) {
@@ -40,13 +47,5 @@ public class RestoreIpAddresses {
         if (s.charAt(0) == '0' && s.length() > 1) return false;
         if (Integer.parseInt(s) > 255) return false;
         return true;
-    }
-
-
-    public static void main(String[] args) {
-        RestoreIpAddresses restoreIpAddresses = new RestoreIpAddresses();
-        restoreIpAddresses.restoreIpAddresses("010010");
-        restoreIpAddresses.restoreIpAddresses("0000");
-        restoreIpAddresses.restoreIpAddresses("25525511135");
     }
 }

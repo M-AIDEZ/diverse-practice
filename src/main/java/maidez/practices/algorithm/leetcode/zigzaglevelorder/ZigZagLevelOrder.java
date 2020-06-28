@@ -4,28 +4,21 @@ import java.util.*;
 
 public class ZigZagLevelOrder {
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
+    Queue<TreeNode> queue = new LinkedList<>();
+    Stack<TreeNode> stack = new Stack<>();
 
     public int maximalSquare(char[][] matrix) {
         int maxSideLength = 0;
-        for(int i = 0; i < matrix.length; i++) {
-            for(int j = 0; j < matrix[0].length; j ++) {
-                if(matrix[i][j] == 1) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == 1) {
                     int maxij;
-                    if(i == 0 || j == 0)
+                    if (i == 0 || j == 0)
                         maxij = matrix[i][j] - '0';
                     else
-                        maxij = Math.max(matrix[i-1][j-1]- '0', Math.max(matrix[i][j-1]- '0', matrix[i-1][j]- '0')) + 1;
+                        maxij = Math.max(matrix[i - 1][j - 1] - '0', Math.max(matrix[i][j - 1] - '0', matrix[i - 1][j] - '0')) + 1;
 
-                    matrix[i][j] = (char)maxij;
+                    matrix[i][j] = (char) maxij;
                     maxSideLength = Math.max(maxSideLength, maxij);
                 }
 
@@ -33,9 +26,6 @@ public class ZigZagLevelOrder {
         }
         return maxSideLength * maxSideLength;
     }
-
-    Queue<TreeNode> queue = new LinkedList<>();
-    Stack<TreeNode> stack = new Stack<>();
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> resultList = new ArrayList<>();
@@ -72,5 +62,15 @@ public class ZigZagLevelOrder {
             if (!stackInteger.isEmpty()) resultList.add(stackInteger);
         }
         return resultList;
+    }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }

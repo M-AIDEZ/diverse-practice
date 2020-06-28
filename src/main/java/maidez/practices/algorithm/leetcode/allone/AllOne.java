@@ -13,29 +13,21 @@ public class AllOne {
 
     private Node max;
 
-    private static class Node {
-        Node prev;
-        Node next;
-        int count;
-        List<String> strings;
-
-        public Node(Node prev, Node next, int count, String string) {
-            this.prev = prev;
-            if (prev != null) prev.next = this;
-            this.next = next;
-            if (next != null) next.prev = this;
-            this.count = count;
-            this.strings = new ArrayList<>();
-            this.strings.add(string);
-        }
-    }
-
-
     /**
      * Initialize your data structure here.
      */
     public AllOne() {
         this.cache = new HashMap<>();
+    }
+
+    public static void main(String[] args) {
+        AllOne allOne = new AllOne();
+        allOne.inc("a");
+        allOne.inc("a");
+        allOne.inc("b");
+        allOne.dec("b");
+        System.out.println(allOne.getMaxKey());
+        System.out.println(allOne.getMinKey());
     }
 
     /**
@@ -149,13 +141,20 @@ public class AllOne {
         return min == null ? "" : min.strings.get(0);
     }
 
-    public static void main(String[] args) {
-        AllOne allOne = new AllOne();
-        allOne.inc("a");
-        allOne.inc("a");
-        allOne.inc("b");
-        allOne.dec("b");
-        System.out.println(allOne.getMaxKey());
-        System.out.println(allOne.getMinKey());
+    private static class Node {
+        Node prev;
+        Node next;
+        int count;
+        List<String> strings;
+
+        public Node(Node prev, Node next, int count, String string) {
+            this.prev = prev;
+            if (prev != null) prev.next = this;
+            this.next = next;
+            if (next != null) next.prev = this;
+            this.count = count;
+            this.strings = new ArrayList<>();
+            this.strings.add(string);
+        }
     }
 }

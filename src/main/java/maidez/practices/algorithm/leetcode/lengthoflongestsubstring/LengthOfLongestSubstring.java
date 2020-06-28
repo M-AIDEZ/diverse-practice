@@ -4,6 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LengthOfLongestSubstring {
+    public static void main(String[] args) {
+        LengthOfLongestSubstring lolss = new LengthOfLongestSubstring();
+        System.out.println(lolss.lengthOfLongestSubstring("aaaaa"));
+        System.out.println(lolss.lengthOfLongestSubstring("abaab"));
+        System.out.println(lolss.lengthOfLongestSubstring("abcab"));
+        System.out.println(lolss.lengthOfLongestSubstring("pwwkew"));
+        System.out.println(lolss.lengthOfLongestSubstring("abcabcbb"));
+
+    }
+
     public int lengthOfLongestSubstring(String s) {
         int maxLength = 0;
         int currentLength = 0;
@@ -19,15 +29,5 @@ public class LengthOfLongestSubstring {
             maxLength = Math.max(maxLength, currentLength);
         }
         return maxLength;
-    }
-
-    public static void main(String[] args) {
-        LengthOfLongestSubstring lolss = new LengthOfLongestSubstring();
-        System.out.println(lolss.lengthOfLongestSubstring("aaaaa"));
-        System.out.println(lolss.lengthOfLongestSubstring("abaab"));
-        System.out.println(lolss.lengthOfLongestSubstring("abcab"));
-        System.out.println(lolss.lengthOfLongestSubstring("pwwkew"));
-        System.out.println(lolss.lengthOfLongestSubstring("abcabcbb"));
-
     }
 }

@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.findcirclenum;
 
 public class FindCircleNum {
+    public static void main(String[] args) {
+        FindCircleNum findCircleNum = new FindCircleNum();
+        findCircleNum.findCircleNum(new int[][]{{1, 0, 0, 1}, {0, 1, 1, 0}, {0, 1, 1, 1}, {1, 0, 1, 1}});
+    }
+
     public int findCircleNum(int[][] M) {
         int count = 0;
         int pCnt = M.length;
@@ -25,10 +30,5 @@ public class FindCircleNum {
                 dfs(j, M, travelled);
             }
         }
-    }
-
-    public static void main(String[] args) {
-        FindCircleNum findCircleNum = new FindCircleNum();
-        findCircleNum.findCircleNum(new int[][]{{1,0,0,1},{0,1,1,0},{0,1,1,1},{1,0,1,1}});
     }
 }

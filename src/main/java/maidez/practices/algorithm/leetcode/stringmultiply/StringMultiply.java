@@ -1,6 +1,12 @@
 package maidez.practices.algorithm.leetcode.stringmultiply;
 
 public class StringMultiply {
+    public static void main(String[] args) {
+        StringMultiply stringMultiply = new StringMultiply();
+        System.out.println(stringMultiply.multiply("999", "999"));
+        System.out.println(stringMultiply.multiply("2262293577402756", "4496246430"));
+    }
+
     public String multiply(String num1, String num2) {
         if (num1.equals("0") || num2.equals("0")) return "0";
         int[] result = new int[num1.length() + num2.length()];
@@ -15,7 +21,7 @@ public class StringMultiply {
         }
 
         for (int i1 = 0; i1 < result.length; i1++) {
-            if(result[i1] > 9) {
+            if (result[i1] > 9) {
                 result[i1 + 1] = result[i1] / 10;
                 result[i1] %= 10;
             }
@@ -29,11 +35,5 @@ public class StringMultiply {
             sb.append(result[length]);
         }
         return sb.toString();
-    }
-
-    public static void main(String[] args) {
-        StringMultiply stringMultiply = new StringMultiply();
-        System.out.println(stringMultiply.multiply("999", "999"));
-        System.out.println(stringMultiply.multiply("2262293577402756", "4496246430"));
     }
 }

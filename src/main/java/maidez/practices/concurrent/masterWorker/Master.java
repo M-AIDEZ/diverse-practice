@@ -11,10 +11,8 @@ import java.util.concurrent.ConcurrentLinkedDeque;
  * Created by luwenyi on 2018/7/4.
  */
 public class Master<T, V> {
-    private Queue<T> queue = new ConcurrentLinkedDeque<>();
-
     public Map<Integer, Thread> workers = Maps.newHashMap();
-
+    private Queue<T> queue = new ConcurrentLinkedDeque<>();
     private Vector<V> results = new Vector<>();
 
     public Master(Worker<T, V> worker, int workerCount) {
@@ -22,6 +20,12 @@ public class Master<T, V> {
         worker.setResults(results);
         for (int i = 0; i < workerCount; i++) {
             workers.put(i, new Thread(worker, "Worker-" + i));
+        }
+    }
+
+    public static void main(String[] args) {
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(String.format("Table-%s", i));
         }
     }
 
@@ -46,12 +50,5 @@ public class Master<T, V> {
 
     public Vector<V> get() {
         return results;
-    }
-
-
-    public static void main(String[] args) {
-        for (int i = 1; i <= 50; i++) {
-            System.out.println(String.format("Table-%s", i));
-        }
     }
 }

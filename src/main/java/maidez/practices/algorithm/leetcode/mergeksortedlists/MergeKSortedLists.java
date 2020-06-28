@@ -1,6 +1,21 @@
 package maidez.practices.algorithm.leetcode.mergeksortedlists;
 
 public class MergeKSortedLists {
+    private static int findMinIndex(ListNode[] lists) {
+        int minValue = Integer.MAX_VALUE;
+        int minIndex = -1;
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] == null) {
+                continue;
+            }
+            if (lists[i].val < minValue) {
+                minIndex = i;
+                minValue = lists[i].val;
+            }
+        }
+        return minIndex;
+    }
+
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode head = null;
         ListNode cur = null;
@@ -17,21 +32,6 @@ public class MergeKSortedLists {
             minIndex = findMinIndex(lists);
         }
         return head;
-    }
-
-    private static int findMinIndex(ListNode[] lists) {
-        int minValue = Integer.MAX_VALUE;
-        int minIndex = -1;
-        for (int i = 0; i < lists.length; i++) {
-            if (lists[i] == null) {
-                continue;
-            }
-            if (lists[i].val < minValue) {
-                minIndex = i;
-                minValue = lists[i].val;
-            }
-        }
-        return minIndex;
     }
 
     public class ListNode {

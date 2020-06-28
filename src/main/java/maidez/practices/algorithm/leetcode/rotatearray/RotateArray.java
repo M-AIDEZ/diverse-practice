@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.rotatearray;
 
 public class RotateArray {
+    public static void main(String[] args) {
+        RotateArray rotateArray = new RotateArray();
+        rotateArray.rotate(new int[]{-1, -100, 3, 99}, 2);
+    }
+
     public void rotate(int[] nums, int k) {
         if (nums == null || nums.length == 1) return;
         k %= nums.length;
@@ -19,10 +24,5 @@ public class RotateArray {
             nums[i] = tmp;
             loops--;
         }
-    }
-
-    public static void main(String[] args) {
-        RotateArray rotateArray = new RotateArray();
-        rotateArray.rotate(new int[]{-1, -100, 3, 99}, 2);
     }
 }

@@ -3,15 +3,6 @@ package maidez.practices.algorithm.leetcode.addtwonumber;
 
 public class AddTwoNumber {
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -44,5 +35,14 @@ public class AddTwoNumber {
             }
         }
         return head;
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

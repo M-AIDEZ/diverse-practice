@@ -2,15 +2,6 @@ package maidez.practices.algorithm.leetcode.reverselist;
 
 public class ReverseList {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode reverseList_iterate(ListNode head) {
         ListNode prev = null;
         ListNode tmp = head;
@@ -35,6 +26,15 @@ public class ReverseList {
             ListNode reverseHead = reverseList_recurseHelper(head, head.next);
             head.next = prev;
             return reverseHead;
+        }
+    }
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
         }
     }
 }

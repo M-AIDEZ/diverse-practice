@@ -1,6 +1,15 @@
 package maidez.practices.algorithm.leetcode.sortcolor;
 
 public class SortColor {
+    public static void main(String[] args) {
+        SortColor sortColor = new SortColor();
+        int[] ints = {0, 0, 1, 1, 2, 0, 2, 2, 1, 0, 1, 1, 2, 2};
+        sortColor.sortColors(ints);
+        for (int anInt : ints) {
+            System.out.println(anInt);
+        }
+    }
+
     public void sortColors(int[] nums) {
         if (nums == null) return;
         int firstOne = -1;
@@ -28,15 +37,6 @@ public class SortColor {
                     nums[i] = 2;
                 }
             }
-        }
-    }
-
-    public static void main(String[] args) {
-        SortColor sortColor = new SortColor();
-        int[] ints = {0, 0, 1, 1, 2, 0, 2, 2, 1, 0, 1, 1, 2, 2};
-        sortColor.sortColors(ints);
-        for (int anInt : ints) {
-            System.out.println(anInt);
         }
     }
 

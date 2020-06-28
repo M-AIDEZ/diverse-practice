@@ -5,6 +5,16 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 public class MinimumTotalTriangle {
+    public static void main(String[] args) {
+        MinimumTotalTriangle minimumTotalTriangle = new MinimumTotalTriangle();
+        minimumTotalTriangle.minimumTotal(Lists.newArrayList(
+                Lists.newArrayList(2),
+                Lists.newArrayList(3, 4),
+                Lists.newArrayList(6, 5, 7),
+                Lists.newArrayList(4, 1, 8, 3)
+        ));
+    }
+
     public int minimumTotal(List<List<Integer>> triangle) {
         if (triangle.size() == 0) return 0;
         int[] minPath = new int[triangle.size()];
@@ -18,15 +28,5 @@ public class MinimumTotalTriangle {
             }
         }
         return minPath[0];
-    }
-
-    public static void main(String[] args) {
-        MinimumTotalTriangle minimumTotalTriangle = new MinimumTotalTriangle();
-        minimumTotalTriangle.minimumTotal(Lists.newArrayList(
-                Lists.newArrayList(2),
-                Lists.newArrayList(3, 4),
-                Lists.newArrayList(6, 5, 7),
-                Lists.newArrayList(4, 1, 8, 3)
-        ));
     }
 }

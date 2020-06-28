@@ -3,14 +3,9 @@ package maidez.practices.concurrent.future;
 
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
-import com.google.common.util.concurrent.JdkFutureAdapters;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created by luwenyi on 2018/11/12.

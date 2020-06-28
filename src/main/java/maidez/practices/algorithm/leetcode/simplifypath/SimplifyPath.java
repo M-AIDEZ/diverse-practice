@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.simplifypath;
 
 public class SimplifyPath {
+    public static void main(String[] args) {
+        SimplifyPath simplifyPath = new SimplifyPath();
+        simplifyPath.simplifyPath("/a//b////c/d//././/..");
+    }
+
     public String simplifyPath(String path) {
         String[] split = path.split("/");
         int i = 0;
@@ -22,10 +27,5 @@ public class SimplifyPath {
             sb.append("/").append(paths[i1]);
         }
         return sb.length() == 0 ? "/" : sb.toString();
-    }
-
-    public static void main(String[] args) {
-        SimplifyPath simplifyPath = new SimplifyPath();
-        simplifyPath.simplifyPath("/a//b////c/d//././/..");
     }
 }

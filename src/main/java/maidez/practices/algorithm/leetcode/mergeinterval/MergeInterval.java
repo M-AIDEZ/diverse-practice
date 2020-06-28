@@ -5,6 +5,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class MergeInterval {
+    public static void main(String[] args) {
+        MergeInterval mergeInterval = new MergeInterval();
+        mergeInterval.merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}, {16, 17}});
+    }
+
     public int[][] merge(int[][] intervals) {
         TreeMap<Integer, Integer> intervalMap = new TreeMap<>(Integer::compareTo);
         for (int[] interval : intervals) {
@@ -25,7 +30,7 @@ public class MergeInterval {
                 continue;
             }
             if (next.getKey() <= prev.getValue()) {
-                if(next.getValue() > prev.getValue()) {
+                if (next.getValue() > prev.getValue()) {
                     prev.setValue(next.getValue());
                 }
                 iterator.remove();
@@ -40,10 +45,5 @@ public class MergeInterval {
             i++;
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        MergeInterval mergeInterval = new MergeInterval();
-        mergeInterval.merge(new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}, {16, 17}});
     }
 }

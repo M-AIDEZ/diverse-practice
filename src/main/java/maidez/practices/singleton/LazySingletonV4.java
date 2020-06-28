@@ -17,13 +17,6 @@ public class LazySingletonV4 {
         }
     }
 
-    /**
-     * 内部类只有在被调用时才会被加载
-     */
-    private static class LazySingletonHolder {
-        private static final LazySingletonV4 instance = new LazySingletonV4();
-    }
-
     public static LazySingletonV4 getInstance() {
         return LazySingletonV4.LazySingletonHolder.instance;
     }
@@ -33,5 +26,12 @@ public class LazySingletonV4 {
      */
     private Object readResolve() {
         return getInstance();
+    }
+
+    /**
+     * 内部类只有在被调用时才会被加载
+     */
+    private static class LazySingletonHolder {
+        private static final LazySingletonV4 instance = new LazySingletonV4();
     }
 }

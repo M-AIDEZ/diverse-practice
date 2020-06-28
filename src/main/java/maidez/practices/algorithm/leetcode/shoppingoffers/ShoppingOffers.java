@@ -1,7 +1,9 @@
 package maidez.practices.algorithm.leetcode.shoppingoffers;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 //https://leetcode-cn.com/problems/shopping-offers/
 public class ShoppingOffers {

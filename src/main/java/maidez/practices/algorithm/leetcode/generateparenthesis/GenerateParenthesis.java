@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParenthesis {
+    public static void main(String[] args) {
+        GenerateParenthesis generateParenthesis = new GenerateParenthesis();
+        generateParenthesis.generateParenthesis(1);
+    }
+
     public List<String> generateParenthesis(int n) {
         List<String> result = new ArrayList<>();
         if (n > 0) generateParenthesis(result, "", n, n);
@@ -21,10 +26,5 @@ public class GenerateParenthesis {
                 generateParenthesis(result, s + "(", open - 1, close);
             generateParenthesis(result, s + ")", open, close - 1);
         }
-    }
-
-    public static void main(String[] args) {
-        GenerateParenthesis generateParenthesis = new GenerateParenthesis();
-        generateParenthesis.generateParenthesis(1);
     }
 }

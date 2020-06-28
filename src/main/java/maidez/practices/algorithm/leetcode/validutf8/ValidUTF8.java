@@ -1,6 +1,11 @@
 package maidez.practices.algorithm.leetcode.validutf8;
 
 public class ValidUTF8 {
+    public static void main(String[] args) {
+        ValidUTF8 validUTF8 = new ValidUTF8();
+        validUTF8.validUtf8(new int[]{197, 130, 1});
+    }
+
     public boolean isUtf8(int start, int length, int[] data) {
         if (length == 0 || length > 4) return false;
         if (length == 1) {
@@ -44,10 +49,5 @@ public class ValidUTF8 {
             }
         }
         return true;
-    }
-
-    public static void main(String[] args) {
-        ValidUTF8 validUTF8 = new ValidUTF8();
-        validUTF8.validUtf8(new int[]{197, 130, 1});
     }
 }

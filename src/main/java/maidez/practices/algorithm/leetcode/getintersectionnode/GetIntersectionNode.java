@@ -1,14 +1,28 @@
 package maidez.practices.algorithm.leetcode.getintersectionnode;
 
 public class GetIntersectionNode {
-    public static class ListNode {
-        int val;
-        ListNode next;
+    public static void main(String[] args) {
+        ListNode c5 = new ListNode(5);
+        ListNode c4 = new ListNode(4);
+        c4.next = c5;
+        ListNode c8 = new ListNode(8);
+        c8.next = c4;
 
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
+        ListNode n1 = new ListNode(1);
+        n1.next = c8;
+        ListNode n4 = new ListNode(4);
+        n4.next = n1;
+
+        ListNode m1 = new ListNode(1);
+        m1.next = c8;
+        ListNode m0 = new ListNode(0);
+        m0.next = m1;
+        ListNode m5 = new ListNode(5);
+        m5.next = m0;
+
+
+        GetIntersectionNode getIntersectionNode = new GetIntersectionNode();
+        getIntersectionNode.getIntersectionNode(n4, m5);
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -50,27 +64,13 @@ public class GetIntersectionNode {
         return null;
     }
 
-    public static void main(String[] args) {
-        ListNode c5 = new ListNode(5);
-        ListNode c4 = new ListNode(4);
-        c4.next = c5;
-        ListNode c8 = new ListNode(8);
-        c8.next = c4;
+    public static class ListNode {
+        int val;
+        ListNode next;
 
-        ListNode n1 = new ListNode(1);
-        n1.next = c8;
-        ListNode n4 = new ListNode(4);
-        n4.next = n1;
-
-        ListNode m1 = new ListNode(1);
-        m1.next = c8;
-        ListNode m0 = new ListNode(0);
-        m0.next = m1;
-        ListNode m5 = new ListNode(5);
-        m5.next = m0;
-
-
-        GetIntersectionNode getIntersectionNode = new GetIntersectionNode();
-        getIntersectionNode.getIntersectionNode(n4, m5);
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
     }
 }

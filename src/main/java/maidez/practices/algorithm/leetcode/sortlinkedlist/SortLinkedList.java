@@ -1,15 +1,6 @@
 package maidez.practices.algorithm.leetcode.sortlinkedlist;
 
 public class SortLinkedList {
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -51,5 +42,14 @@ public class SortLinkedList {
         cur.next = index1 == null ? index2 : index1;
         return demon.next;
 
+    }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

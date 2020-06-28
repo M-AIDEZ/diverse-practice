@@ -15,14 +15,14 @@ public class LazySingletonV2 implements Serializable {
     private LazySingletonV2() {
     }
 
+    public static LazySingletonV2 getInstance() {
+        return LazySingletonHolder.instance;
+    }
+
     /**
      * 内部类只有在被调用时才会被加载
      */
     private static class LazySingletonHolder {
         private static final LazySingletonV2 instance = new LazySingletonV2();
-    }
-
-    public static LazySingletonV2 getInstance() {
-        return LazySingletonHolder.instance;
     }
 }

@@ -105,7 +105,7 @@ public class Tokenizer {
         }
     }
 
-    private static boolean isField(String token){
+    private static boolean isField(String token) {
         return !NumberUtils.isNumber(token)
                 && !"now".equals(token)
                 && !StringUtils.startsWithIgnoreCase(token, ".")

@@ -7,6 +7,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
+    public static void main(String[] args) {
+        ThreeSum threeSum = new ThreeSum();
+        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})));
+        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{0, 0, 0, 0, 0})));
+        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{-2, 0, 0, 2, 2})));
+    }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -35,12 +42,5 @@ public class ThreeSum {
             }
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        ThreeSum threeSum = new ThreeSum();
-        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4})));
-        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{0, 0, 0, 0, 0})));
-        System.out.println(JSON.toJSONString(threeSum.threeSum(new int[]{-2, 0, 0, 2, 2})));
     }
 }

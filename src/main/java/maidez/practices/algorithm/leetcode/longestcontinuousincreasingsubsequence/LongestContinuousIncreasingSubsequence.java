@@ -2,7 +2,7 @@ package maidez.practices.algorithm.leetcode.longestcontinuousincreasingsubsequen
 
 public class LongestContinuousIncreasingSubsequence {
     public static int findLengthOfLCIS(int[] nums) {
-        if(nums.length < 2){
+        if (nums.length < 2) {
             return nums.length;
         }
         int maxLength = 1;
@@ -11,7 +11,7 @@ public class LongestContinuousIncreasingSubsequence {
             if (nums[i] > nums[i - 1]) {
                 currentLength++;
             } else {
-                if(currentLength > maxLength){
+                if (currentLength > maxLength) {
                     maxLength = currentLength;
                 }
                 currentLength = 1;

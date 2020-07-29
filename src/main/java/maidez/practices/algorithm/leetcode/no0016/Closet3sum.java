@@ -1,4 +1,4 @@
-package maidez.practices.algorithm.leetcode.no16;
+package maidez.practices.algorithm.leetcode.no0016;
 
 import java.util.Arrays;
 
